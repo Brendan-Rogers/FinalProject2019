@@ -1,0 +1,39 @@
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,700");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  list-style-type: none;
+  font-family: "Open Sans", sans-serif;
+}
+
+.centered {
+  width: 400px;
+  height: 600px;
+  z-index: 900;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  margin: -100px 0 0 -200px;
+}
+
+.full {
+  height: 100vh;
+  width: 100%;
+}
+
+#landing {
+  background: black;
+}
+
+#aboutPoster {
+  background: #f5a9a9;
+}
+
+#askUs {
+  background: #00afcf;
+}
+
+/*# sourceMappingURL=master.css.map */
