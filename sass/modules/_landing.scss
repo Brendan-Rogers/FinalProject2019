@@ -1,0 +1,50 @@
+#landing {
+    background:black;
+    position: relative;
+
+
+}
+
+//main text
+.titleText{
+  color:white;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom:3em;
+  margin-left:1em;
+  width:10px;
+  font-weight:500; 
+}
+
+
+.centerText{
+position: relative;
+float: left;
+top: 40%;
+left: 50%;
+transform: translate(-50%, -50%);
+
+
+  
+}
+
+@media screen and (min-width:600px){
+ 
+    }
+    @media screen and (min-width:900px){
+
+    }
+
+    //parallax 
+
+    .item {
+
+      position: absolute;
+      z-index:1000;
+      margin:0 auto;
+     height:80%;
+  
+  
+  
+  }

@@ -6,8 +6,8 @@ new Vue({
             options: {
                 controlArrows: true,
                 scrollBar: true,
-                menu: '#menu',
-                anchors: ['page1', 'page2', 'page3'],
+                // menu: '#menu',
+                //anchors: ['page1', 'page2', 'page3'],
 
             },
         }
@@ -24,3 +24,6 @@ document.querySelector('#fullpage').appendChild(section);
 
 vm.$refs.fullpage.build();
 this.$refs.fullpage.build();
+
+
+

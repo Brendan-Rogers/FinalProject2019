@@ -1,0 +1,65 @@
+#aboutPoster{
+    background:$pink;
+
+  position:relative;
+}
+
+#imgBox{
+
+    width:280px;
+    height:450px;
+    opacity:0.5;
+    position: absolute;
+   // background:red;
+
+
+}
+
+#askUs{
+    position:relative;
+}
+
+
+#imgBox2{
+
+    width:280px;
+    height:450px;
+    opacity:0.5;
+    position: absolute;
+   // background:red;
+
+
+}
+
+    .item {
+   
+
+    }
+
+    .desc {
+     
+        z-index:2000;
+        grid-column: 2;
+    }
+
+
+
+    @media screen and (min-width:600px){
+        #aboutPoster{
+            display:grid;
+            grid-template-columns: 1fr 50% 1fr;
+        }
+        #askUs{
+            display:grid;
+            grid-template-columns: 1fr 50% 1fr;
+        }
+
+        
+        .item{
+          
+        }
+ 
+    }
+    @media screen and (min-width:900px){
+
+    }
