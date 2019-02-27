@@ -7,20 +7,40 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Organ Donations</title>
 	<link rel="stylesheet" href="css/master.css">
-</head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+	<script src="https://unpkg.com/vue-fullpage.js/dist/vue-fullpage.js"></script>
 
-<body>
-	<main>
-		<div id="landing" class="full"></div>
-		<div id="aboutUs" class="full"></div>
-		<div id="aboutPoster" class="full"></div>
-		<div id="events" class="full"></div>
-		<div id="askUs" class="full"></div>
-	</main>
-	<div id="footer"></div>
+
+	<div id="app">
+		<full-page :options="options" id="fullpage" ref="fullpage">
+
+			<div id="landing" class="section full">
+				<h3>section 1</h3>
+			</div>
+
+			<div id="aboutUs" class="section full">
+				<h3>section 2</h3>
+			</div>
+
+			<div id="aboutPoster" class="section full">
+				<h3>Section 3</h3>
+			</div>
+
+			<div id="communityEvents" class="section full">
+				<h3>Section 3</h3>
+			</div>
+
+			<div id="askUs" class="section full">
+				<h3>Section 3</h3>
+			</div>
+
+		</full-page>
+	</div>
 
 
 	<script src="js/main.js"></script>
-</body>
+
+
+	</body>
 
 </html>
