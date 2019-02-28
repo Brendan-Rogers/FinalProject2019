@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,500,700");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  list-style-type: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1, h2 {
+  font-weight: 500;
+  z-index: 5000;
+}
+
+.section {
+  padding: 1em;
+  overflow: hidden;
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+#landing {
+  background: #bf26ee;
+  background-blend-mode: multiply;
+  background-image: url(../images/organ_logo.png);
+  background-position: center;
+  background-size: cover;
+}
+
+.rightSplat {
+  margin-left: 50%;
+  margin-bottom: 20%;
+}
+
+#aboutPoster {
+  background: #f5a9a9;
+}
+
+.bkg {
+  background: no-repeat;
+  background-position: center;
+  background-size: contain;
+  background-origin: content-box;
+  opacity: 0.7;
+}
+
+#aboutUs {
+  background-image: url(../images/weAre.svg);
+}
+
+#askUs {
+  background: #00afcf;
+}
+
+#communityEvents {
+  background-image: url(../images/events.svg);
+}
+
+.textPage {
+  margin: 1em;
+}
+
+.colorPage {
+  color: white;
+}
+.colorPage .action {
+  color: white;
+}
+
+.titleSmall {
+  font-weight: 700;
+}
+
+.titleText {
+  color: white;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 1em;
+  width: 10px;
+  font-weight: 500;
+  z-index: 7000;
+}
+
+.desc {
+  position: absolute;
+  z-index: 6000;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centerText {
+  position: absolute;
+  float: left;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 0.8em;
+  font-weight: 600;
+}
+
+.centered {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.action {
+  color: red;
+  text-decoration: none;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 1em;
+  margin-left: 1em;
+  font-weight: 700;
+}
+
+.line {
+  height: 3px;
+  width: 30%;
+  background: red;
+  display: block;
+}
+
+#aboutPoster {
+  position: relative;
+}
+
+.item {
+  position: absolute;
+}
+
+.imgBox {
+  width: 280px;
+  height: 450px;
+  opacity: 0.5;
+  position: absolute;
+}
+
+.drawHeart {
+  margin-top: 180px;
+  filter: blur(3px);
+}
+
+footer {
+  height: 5em;
+}
+
+@media screen and (min-width: 600px) {
+  .section {
+    padding: 3em;
+  }
+
+  .titleText {
+    margin-left: 0;
+  }
+
+  .centerText {
+    padding: 3em;
+    font-size: 0.9em;
+    top: 50%;
+  }
+
+  .action {
+    margin-left: 3em;
+  }
+
+  .desc {
+    position: relative;
+  }
+
+  .imgBox {
+    opacity: 1;
+  }
+
+  .item {
+    height: 120%;
+  }
+
+  .drawHeart {
+    height: 50%;
+  }
+}
+@media screen and (min-width: 900px) {
+  .section {
+    padding: 5em;
+  }
+}
+/*#navArea {
+	position: fixed;
+	z-index: 1000;
+    top: 50%;
+    left:50%;
+	opacity: 1;
+    background:red;
+  
+
+   
+}
+
+#navArea ul li, .slideNav ul li {
+	display: block;
+	width: 14px;
+	height: 13px;
+	margin: 7px;
+	position: relative;
+}
+
+#navArea ul li a, .slideNav ul li a {
+	display: block;
+	position: relative;
+	z-index: 1;
+	width: 100%;
+	height: 100%;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+#navArea ul li a span, .slideNav ul li a span {
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	height: 6px;
+	width: 6px;
+	background:white;
+	left: 50%;
+	top: 50%;
+	-webkit-transition: all .1s ease-in-out;
+	-moz-transition: all .1s ease-in-out;
+	-o-transition: all .1s ease-in-out;
+	transition: all .1s ease-in-out;
+}
+
+.dot {
+	position: absolute;
+	width: 3px;
+	height: 3px;
+	//padding: 0;
+    white-space: nowrap;
+	border: 0;
+}
+*/
+
+/*# sourceMappingURL=master.css.map */

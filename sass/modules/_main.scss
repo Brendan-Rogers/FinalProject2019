@@ -1,0 +1,219 @@
+
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+body{
+    list-style-type:none;
+    font-family: $mainFont;
+}
+h1, h2 {
+    font-weight:500;
+    z-index:5000;
+}
+
+
+.section{
+    padding:1em;
+    overflow:hidden;
+    position:relative;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
+ 
+}
+
+//page colors
+
+#landing{
+    background:rgb(191, 38, 238);
+    background-blend-mode:multiply;
+    background-image:url(../images/organ_logo.png);
+    background-position:center;
+    background-size: cover;
+}
+
+.rightSplat{
+    margin-left:50%;
+    margin-bottom:20%;
+}
+
+#aboutPoster{
+    background:$pink;
+}
+
+.bkg{
+    background:no-repeat;
+    background-position: center;
+    background-size:contain;
+    background-origin: content-box;
+    opacity:0.7 ;
+    
+}
+
+#aboutUs{
+    background-image:url(../images/weAre.svg);
+
+}
+
+#askUs{
+    background:$blue;
+}
+
+#communityEvents{
+    background-image:url(../images/events.svg);
+}
+
+//text set up
+
+.textPage{
+    margin:1em;
+}
+
+
+.colorPage{
+    color:white;
+    .action{
+        color:white;
+    }
+
+}
+.titleSmall{
+    font-weight:700;
+ 
+}
+
+//text areas
+.titleText{
+    color:white;
+    position: absolute;
+    bottom: 0;
+    margin-bottom:1em;
+    width:10px;
+    font-weight:500; 
+    z-index:7000;
+
+  }
+
+
+
+
+.desc{
+    position: absolute;
+    z-index:6000;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.centerText{
+    position: absolute;
+    float: left;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size:0.8em;
+    font-weight: 600;
+    
+      
+    }
+
+
+    .centered{
+        top: 50%;
+        left: 50%;
+         transform: translate(-50%, -50%);
+
+    }
+
+
+    //call to action
+    .action{
+        color:red;
+        text-decoration:none;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        margin-bottom:1em;
+        margin-left:1em;
+        font-weight: 700;
+    }
+    .line{
+        height:3px;
+        width:30%;
+        background:red;
+        display:block;
+    }
+
+    //parallax
+    #aboutPoster{
+        position: relative;
+     
+    }
+   .item{
+       position:absolute;
+   }
+    .imgBox{
+
+        width:280px;
+        height:450px;
+        opacity:0.5;  
+        position: absolute;
+    
+    
+    }
+
+    .drawHeart{
+        margin-top:180px;
+        filter:blur(3px);
+       
+    }
+//footer
+footer{
+    height:5em;
+}
+
+    @media screen and (min-width:600px){
+        .section {
+            padding:3em;
+        
+        }
+
+        .titleText{
+            margin-left:0;
+        }
+      
+        .centerText {
+            padding:3em;
+            font-size:0.9em;
+            top:50%;
+        
+        }
+        .action{
+            margin-left:3em;
+        }
+        .desc{
+            position:relative;
+        }
+        .imgBox{
+            opacity:1 ;
+        }
+        .item{
+            height:120%;
+        }
+        .drawHeart{
+            height:50%;
+        }
+       
+    }
+
+    @media screen and (min-width:900px){
+        .section {
+            padding:5em;
+        
+        }
+        
+        }

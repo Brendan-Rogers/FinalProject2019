@@ -1,13 +1,149 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8">
-	<title>Organ Donations</title>
-	<link rel="stylesheet" href="css/main.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Organ Donations</title>
+    <link rel="stylesheet" href="css/master.css">
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
+    <script src="https://unpkg.com/vue-fullpage.js/dist/vue-fullpage.js"></script>
+    <script src="https://unpkg.com/scrollreveal"></script>
+
 </head>
+
+
 <body>
+    <!--<nav>Menu</nav>-->
+
+    <div id="app">
+        <!-- <div id="navArea" class="rightPos" style="margin-top: -33.5px;">
+            <ul>
+                <li>
+                    <a href="#landing" class="active">
+                        <span class="dot"></span>
+                        <span></span>
+                    </a>
+                </li>
+                <li><a href="#aboutUs"><span class="dot"></span>
+                        <span></span>
+                    </a>
+                </li>
+                <li><a href="#aboutPoster"><span class="dot"></span>
+                        <span></span>
+                    </a>
+                </li>
+                <li><a href="#communityEvents"><span class="dot"></span>
+                        <span></span>
+                    </a>
+                </li>
+
+            </ul>
+        </div>-->
+        <full-page :options="options" id="fullpage" ref="fullpage">
+            <!--landing page -->
+            <div id="landing" class="section colorPage">
+                <h1 class="titleSmall">ODP</h1>
+                <h1 class="titleText rev">Organ Donation Project</h1>
+
+                <img src="images/splat2png.png" data-depth="0.9" class="item mix rightSplat">
+
+                <img src="images/line.png" data-depth="0.7" class="item" height="550">
 
 
-<script src="js/main.js"></script>
+
+            </div>
+            <!--about us-->
+            <div id="aboutUs" class="section textPage bkg">
+                <h1 class="titleSmall">We Are</h1>
+                <p class="centerText">A community who seeks to raise awareness for organ donation
+                    through
+                    artwork and
+                    other mediums.
+
+                    Registering to become a potential organ donor when you die may be the simplest and most generous
+                    thing you ever do.
+
+                    By leaving your organs behind, you may save as many as eight (8 lives). What could be more
+                    generous
+                    than to give a fellow Canadian a chance.
+                </p>
+                <a href="#" class="action">Become an organ donar here</a>
+            </div>
+
+            <!--about the poster campaign-->
+            <div id="aboutPoster" class="section colorPage">
+                <h1 class="titleSmall">ODP</h1>
+                <div class="desc">
+                    <h1 class="titleLarge">Poster Campaign</h1>
+                    <p class="leftText">Anyone who is an organ donar can
+                        submit artwork that can be viewed
+                        by the public eye, whether it be on the
+                        website or on a billboard</p>
+                </div>
+                <div class="centered imgBox">
+                    <img src="images/heart2.png" data-depth="0.1" class="item drawHeart" height="200">
+                    <img src="images/line.png" data-depth="0.3" class="item" height="400">
+                    <img src="images/heart.png" data-depth="0.5" class="item" height="500">
+                    <img src="images/line2.png" data-depth="0.7" class="item" height="550">
+                    <img src="images/pinkSplat.png" data-depth="0.9" class="item" height="850">
+
+
+
+                </div>
+                <a href="#" class="action">View All Submitions</a>
+
+            </div>
+
+            <!--community events-->
+
+            <div id="communityEvents" class="section textPage bkg">
+                <h1 class="titleSmall">Community Events</h1>
+                <p class="centerText">The Organ Donation Project is about community involvment and bringing
+                    people
+                    together. We run and are involved in a number of events to help raise awareness and drive donor
+                    registration.
+                </p>
+                <a href="#" class="action">Upcoming Events</a>
+            </div>
+
+            <!--ask us questions yo-->
+            <div id="askUs" class="section colorPage">
+                <h1 class="titleSmall">ODP</h1>
+                <div class="desc">
+                    <h1 class="titleLarge">Ask Us a Question</h1>
+                    <p class="leftText">Feel free to ask us questions whether it be
+                        about the process of organ donation, the
+                        poster project, or our upcoming events. Ask
+                        us anything here. </p>
+                </div>
+                <div class="centered imgBox">
+                    <img src="images/splat2png.png" data-depth="0.1" class="item" height="400">
+                    <img src="images/lung.png" data-depth="0.3" class="item" height="400">
+                    <img src="images/splat.png" data-depth="0.5" class="item" height="400">
+                    <img src="images/splat2png.png" data-depth="0.9" class="item" height="650">
+
+
+
+                </div>
+
+                <a href="#" class="action">Contact Us</a>
+
+            </div>
+
+        </full-page>
+
+    </div>
+
+
+
+    <script src="js/main.js"></script>
+    <script src="js/parallax.js"></script>
+
+
 </body>
+
 </html>
