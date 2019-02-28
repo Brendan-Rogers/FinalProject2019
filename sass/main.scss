@@ -2,10 +2,15 @@
 /* CSS Document */
 
 @import '_mixins';
+@import 'modules/_nav';
 
 
 .hidden{
     display: none;
+}
+
+.lock{
+    overflow: hidden;
 }
 
 body, html{
@@ -27,6 +32,7 @@ body, html{
 }
 
 .menuButton{
+    font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
     color: #000000;
     float: right;
@@ -36,6 +42,20 @@ body, html{
 }
 
 .menuButton:hover{
+    text-decoration: underline;
+}
+
+.closeButton{
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: none;
+    color: #dfdfdf;
+    float: right;
+    margin-top: 40px;
+    margin-right: 75px;
+    font-weight: bold;
+}
+
+.closeButton:hover{
     text-decoration: underline;
 }
 

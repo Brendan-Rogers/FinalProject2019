@@ -9,10 +9,32 @@
 </head>
 <body>
 
+    <nav class="navArea">
+        <h1 class="hidden">Main Navigation</h1>
+
+        <a href="#" class="closeButton">Close</a>
+
+        <ul class="navList">
+            <li class="navOpt"><a href="#" class="navLink">home.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">about.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
+        </ul>
+
+        <ul class="navInfo">
+            <li class="infoList">130 Dundas Street, 5th floor</li>
+            <li class="infoList">London, Ontario</li>
+            <li class="infoList">(555)-555-5555</li>
+            <li class="infoList">Awareness@ODP.ca</li>
+        </ul>
+    </nav>
+
+    <a href="#" class="menuButton">Menu</a>
+
     <main class="container">
         <h1 class="siteTitle">ODP</h1>
 
-        <a href="#" class="menuButton">Menu</a>
+        
 
         <ul class="imgFilter">
             <li class="filterChoice"><a href="#">All</a></li>
@@ -55,5 +77,7 @@
 
         </footer>
     </main>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
