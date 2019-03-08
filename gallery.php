@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>ODP - Gallery</title>
     <link rel="stylesheet" href="css/master.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.5.13/vue.min.js"></script>
 </head>
 <body>
 
@@ -15,7 +16,7 @@
         <a href="#" class="closeButton">Close</a>
 
         <ul class="navList">
-            <li class="navOpt"><a href="#" class="navLink">home.</a></li>
+            <li class="navOpt"><a href="index.html" class="navLink">home.</a></li>
             <li class="navOpt"><a href="#" class="navLink">about.</a></li>
             <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
             <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
@@ -31,7 +32,7 @@
 
     <a href="#" class="menuButton">Menu</a>
 
-    <main class="container">
+    <main class="container page">
         <h1 class="siteTitle">ODP</h1>
 
         
@@ -78,6 +79,6 @@
         </footer>
     </main>
 
-    <script src="js/main.js"></script>
+    <script src="js/nav.js"></script>
 </body>
 </html>
