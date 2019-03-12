@@ -13,6 +13,12 @@ h1, h2 {
   font-weight: 500;
   z-index: 5000; }
 
+.hidden {
+  display: none; }
+
+.lock {
+  overflow: hidden; }
+
 .section {
   padding: 1em;
   overflow: hidden;
@@ -66,6 +72,7 @@ h1, h2 {
   position: absolute;
   bottom: 0;
   margin-bottom: 1em;
+  left: 15px;
   width: 10px;
   font-weight: 500;
   z-index: 7000; }
@@ -131,7 +138,7 @@ footer {
     padding: 3em; }
 
   .titleText {
-    margin-left: 0; }
+    left: 50px; }
 
   .centerText {
     padding: 3em;
@@ -154,17 +161,22 @@ footer {
     height: 50%; } }
 @media screen and (min-width: 900px) {
   .section {
-    padding: 5em; } }
+    padding: 5em; }
+
+  .titleText {
+    left: 85px; } }
 .navArea {
   position: absolute;
   background-color: #ff0000;
   width: 40%;
   right: 0;
-  height: 100%; }
+  height: 100%;
+  z-index: 4; }
 
 .navList {
   list-style-type: none;
-  margin-top: 100px; }
+  margin-top: 100px;
+  margin-left: 10%; }
 
 .navLink {
   color: #dfdfdf;
@@ -184,21 +196,41 @@ footer {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
   font-size: .9em;
-  color: #dfdfdf; }
+  color: #dfdfdf;
+  margin-left: 10%; }
 
 .infoList {
   margin-bottom: 20px; }
 
+.menuButton {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #000000;
+  position: absolute;
+  top: 80px;
+  right: 75px;
+  font-weight: bold;
+  z-index: 2; }
+
+.menuButton:hover {
+  text-decoration: underline; }
+
+.menuHome {
+  color: #ffffff; }
+
+.closeButton {
+  font-family: Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  color: #dfdfdf;
+  position: absolute;
+  top: 80px;
+  right: 75px;
+  font-weight: bold; }
+
+.closeButton:hover {
+  text-decoration: underline; }
+
 /* CSS Document */
-.hidden {
-  display: none; }
-
-.lock {
-  overflow: hidden; }
-
-html {
-  margin: 0; }
-
 .container {
   font-family: Arial, Helvetica, sans-serif;
   width: 100%;
@@ -209,39 +241,15 @@ html {
   font-size: 2em;
   margin-left: 55px;
   display: inline-block;
-  padding-top: 40px;
+  padding-top: 60px;
   font-weight: bold; }
-
-.menuButton {
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  color: #000000;
-  float: right;
-  margin-top: 40px;
-  margin-right: 75px;
-  font-weight: bold; }
-
-.menuButton:hover {
-  text-decoration: underline; }
-
-.closeButton {
-  font-family: Arial, Helvetica, sans-serif;
-  text-decoration: none;
-  color: #dfdfdf;
-  float: right;
-  margin-top: 40px;
-  margin-right: 75px;
-  font-weight: bold; }
-
-.closeButton:hover {
-  text-decoration: underline; }
 
 .imgFilter {
   list-style-type: none;
   float: right;
   clear: both;
   margin-right: 75px;
-  margin-top: 70px; }
+  margin-top: 150px; }
 
 .filterChoice {
   display: inline-block;

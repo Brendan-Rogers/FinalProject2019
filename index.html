@@ -18,8 +18,29 @@
 
 <body>
     <!--<nav>Menu</nav>-->
+    <nav class="navArea hidden">
+        <h1 class="hidden">Main Navigation</h1>
 
-    <div id="app">
+        <a href="#" class="closeButton">Close</a>
+
+        <ul class="navList">
+            <li class="navOpt"><a href="#" class="navLink">home.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">about.</a></li>
+            <li class="navOpt"><a href="gallery.php" class="navLink">gallery.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
+        </ul>
+
+        <ul class="navInfo">
+            <li class="infoList">130 Dundas Street, 5th floor</li>
+            <li class="infoList">London, Ontario</li>
+            <li class="infoList">(555)-555-5555</li>
+            <li class="infoList">Awareness@ODP.ca</li>
+        </ul>
+    </nav>
+
+    <a href="#" class="menuButton menuHome">Menu</a>
+
+    <div id="app" class="page">
         <!-- <div id="navArea" class="rightPos" style="margin-top: -33.5px;">
             <ul>
                 <li>
@@ -140,6 +161,7 @@
 
 
 
+    <script src="js/nav.js"></script>
     <script src="js/main.js"></script>
     <script src="js/parallax.js"></script>
 

@@ -1,20 +1,6 @@
 @charset "utf-8";
 /* CSS Document */
 
-
-
-.hidden{
-    display: none;
-}
-
-.lock{
-    overflow: hidden;
-}
-
-html{
-    margin: 0;
-}
-
 .container{
     font-family: Arial, Helvetica, sans-serif;
     width: 100%;
@@ -26,44 +12,17 @@ html{
     font-size: 2em;
     margin-left: 55px;
     display: inline-block;
-    padding-top: 40px;
+    padding-top: 60px;
     font-weight: bold;
 }
 
-.menuButton{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: #000000;
-    float: right;
-    margin-top: 40px;
-    margin-right: 75px;
-    font-weight: bold;
-}
-
-.menuButton:hover{
-    text-decoration: underline;
-}
-
-.closeButton{
-    font-family: Arial, Helvetica, sans-serif;
-    text-decoration: none;
-    color: #dfdfdf;
-    float: right;
-    margin-top: 40px;
-    margin-right: 75px;
-    font-weight: bold;
-}
-
-.closeButton:hover{
-    text-decoration: underline;
-}
 
 .imgFilter{
     list-style-type: none;
     float: right;
     clear: both;
     margin-right: 75px;
-    margin-top: 70px;
+    margin-top: 150px;
 }
 
 .filterChoice{
