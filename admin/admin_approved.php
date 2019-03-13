@@ -5,7 +5,7 @@
 	include('scripts/config.php');
 	confirm_logged_in();
 
-	$display = get_images('new');
+	$display = get_images('approved');
 ?>
 
 <!doctype html>
@@ -19,7 +19,8 @@
 
 <body>
 	<main>
-		<h2> Welcome to the Mod Panel, <?php  echo ucwords($_SESSION['user_name']).'.';  ?> </h2>
+		<h2> These are currently in the gallery, <?php  echo ucwords($_SESSION['user_name']).'.';  ?> </h2>
+		<h3>You can choose to move them out of rotation.</h3>
 
 
 	<?php while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
@@ -28,10 +29,8 @@
 			<img src="../images/user_images/<?php echo $row['file_name']; ?>" alt="">
 			<br><br>
 			
-			<form action="admin_index.php" method="post">
-				<input type="submit" name="yes_<?php echo $row['id']; ?>" value="Approve">
-				<br><br>
-				<input type="submit" name="no_<?php echo $row['id']; ?>" value="Decline">
+			<form action="admin_approved.php" method="post">
+				<input type="submit" name="no_<?php echo $row['id']; ?>" value="Move to Archive">
 				<br><br>
 			</form>
 		</div>
@@ -40,13 +39,8 @@
 
 		$id = $row['id'];
 		$file = $row['file_name'];
-		$yes_post = 'yes_'.$id;
-		$no_post = 'no_'.$id;
 
-		// they've clicked approve
-		if (isset($_POST[$yes_post])) {
-			echo image_status($id, $file, '1');
-		}
+		$no_post = 'no_'.$id;
 
 		// they've clicked decline
 		if (isset($_POST[$no_post])) {
@@ -56,8 +50,8 @@
 		endwhile;	
 	?>
 
-		<a href="admin_archive.php">ARCHIVED</a>
-		<a href="admin_approved.php">ACCEPTED GALLERY</a>
+		<a href="admin_archive.php">ARCHIVE</a>
+		<a href="admin_index.php">INDEX</a>
 		<br>
 		<a href="admin_createuser.php">Create Moderator</a>
 		<a href="admin_edituser.php">Edit Moderator</a>

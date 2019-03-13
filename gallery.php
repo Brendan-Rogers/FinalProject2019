@@ -1,3 +1,13 @@
+<?php
+    ini_set('display_errors',1);
+    error_reporting(E_ALL);
+    
+    include('admin/scripts/config.php');
+
+    $display = get_images('approved');
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,23 +58,12 @@
         <section class="imgSect">
             <h2 class="hidden">Gallery</h2>
 
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
-            
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
+            <?php  while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
 
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
+                <div class="orgPoster"><img src="images/user_images/<?php echo $row['file_name']; ?>" alt="submission <?php echo $row['id']; ?>"></div>
 
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
+            <?php endwhile; ?>
 
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
-
-            <div class="orgPoster"><img src="images/heart1.png" alt="heart picture 1"></div>
-            <div class="orgPoster"><img src="images/heartInv.png" alt="heart picture 2"></div>
 
         </section>
 

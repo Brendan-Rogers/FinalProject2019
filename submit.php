@@ -32,7 +32,7 @@
          $new_file_name = strtolower($f_name).'_'.time().'.'.$file_ext;
 
          move_uploaded_file($file_tmp,'images/user_images/'.$new_file_name);
-         echo move_new_image($f_name, $l_name, $email, $new_file_name);
+         echo image_submit($f_name, $l_name, $email, $new_file_name);
 
 
       }else{

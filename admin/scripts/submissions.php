@@ -1,7 +1,7 @@
 <?php 
 
 
-function move_new_image($f_name, $l_name, $email, $file) {
+function image_submit($f_name, $l_name, $email, $file) {
 
 	require_once('connect.php');
 
@@ -24,32 +24,21 @@ function move_new_image($f_name, $l_name, $email, $file) {
 
 }
 
-function get_pre_images() {
-
-	require_once('connect.php');
-
-	$get_images_query = 'SELECT id, file_name, upload_time FROM tbl_pre_images WHERE img_status = 0';
-	$get_images_set = $pdo->query($get_images_query);
-
-	if ($get_images_set) {
-		return $get_images_set;
-	} else {
-		return 'There are no more pre-approval submissions.';
-	}
-
-}
-
-function approve_image($id, $file) {
+function image_status($id, $file, $status) {
 
 	include('connect.php');
 
-	// 1 - add approve image in tbl_pre_images (status = 1)
+	// 1 - add status
+	// 		0 = NEW
+	// 		1 = APPROVED
+	//		2 = DECLINED
 
-	$approve_image_query = "UPDATE tbl_pre_images SET img_status = 1 WHERE id = :id";
+	$approve_image_query = "UPDATE tbl_pre_images SET img_status = :status WHERE id = :id";
 	$approve_image_set = $pdo->prepare($approve_image_query);
 	$approve_image_set->execute(
 		array(
-			':id' => $id
+			':id' => $id,
+			':status' => $status 
 		)
 	);
 
@@ -64,54 +53,9 @@ function approve_image($id, $file) {
 		)
 	);
 
-	// 3 - add image to tbl_post_images
-
-	$send_image_query = "INSERT INTO tbl_post_images (file_name) VALUES (:file)";
-	$send_image_set = $pdo->prepare($send_image_query);
-	$send_image_set->execute(
-		array(
-			':file'=>$file
-		)
-	);
-
-	// 4  - Return valuable deets
-
-	return 'Picture '.$file.' has been APPROVED <br>';
-
 }
 
-function decline_image($id, $file) {
-
-	include('connect.php');
-
-	// 1 - decline image in tbl_pre_images (img_status = 2)
-
-	$decline_image_query = "UPDATE tbl_pre_images SET img_status = 2 WHERE id = :id";
-	$decline_image_set = $pdo->prepare($decline_image_query);
-	$decline_image_set->execute(
-		array(
-			':id' => $id
-		)
-	);
-
-	// 2 - add who declind image to tbl_pre_images (moderator = $_SESSION['user_id'])
-
-	$mod_decline_query = "UPDATE tbl_pre_images SET moderator = :moderator WHERE id = :id";
-	$mod_decline_set = $pdo->prepare($mod_decline_query);
-	$mod_decline_set->execute(
-		array(
-			':moderator' => $_SESSION['user_id'],
-			':id' => $id
-		)
-	);
-
-	// 3 - Return salient info
-
-	return 'Picture number '.$id.' has been DECLINED <br>';
-
-}
-
-function delete_image($id, $file) {
+function image_delete($id, $file) {
 
 	include('connect.php');
 
@@ -129,6 +73,44 @@ function delete_image($id, $file) {
 		)
 	);
 
+	if ($delete_image_set) {
+		return 'Image '.$file.' has been deleted.<br>';
+	} else {
+		return 'Error deleting image';
+	}
+	
+}
+
+function get_images($x) {
+
+	include('connect.php');
+
+	switch ($x) {
+		case 'new':
+			$status = 0;
+			break;
+		
+		case 'approved':
+			$status = 1;
+			break;
+
+		case 'declined':
+			$status = 2;
+			break;
+
+		default:
+			return 'This function requires a parameter';
+			break;
+	}
+
+	$get_images_query = "SELECT id, file_name, upload_time FROM tbl_pre_images WHERE img_status = {$status}";
+	$get_images_set = $pdo->query($get_images_query);
+
+	if ($get_images_set) {
+		return $get_images_set;
+	} else {
+		return 'There are no more pre-approval submissions.';
+	}
 
 
 }
