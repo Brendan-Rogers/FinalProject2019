@@ -63,9 +63,13 @@
 				// set temporary session globalvariables, using the found user
 				$_SESSION['user_id'] = $id;
 				$_SESSION['user_name']= $founduser['user_fname'];
-				// send last login to admin_index.php
-				$_SESSION['last_login'] = $founduser['user_lastlogin'];
-				// 1 if user is new, 0 if user is not
+
+				// 1 - Administrator
+				// 2 - Moderator
+				$_SESSION['user_mod'] = $founduser['user_mod'];
+
+				// 1 - user is new
+				// 0 - user is returning
 				$newuser = $founduser['user_new'];
 				$time_since = mktime() - strtotime($founduser['user_date']);
 
@@ -105,12 +109,11 @@
 
 			} else {
 				// they're old, send to index
-
 				redirect_to("admin_index.php");
 			}
 
 		}else{
-			// they have failed to login: if there's a matching username, log a strike against them
+			// they have failed to use the correct password: if there's a matching username, log a strike against them
 			$update = "UPDATE tbl_users SET user_failed = user_failed + 1 WHERE user_name=:username";
 			$increment_failed = $pdo->prepare($update);
 			$increment_failed->execute(

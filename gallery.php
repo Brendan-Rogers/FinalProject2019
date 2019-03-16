@@ -4,7 +4,7 @@
     
     include('admin/scripts/config.php');
 
-    $display = get_images('approved');
+    $display = get_images(1);
 ?>
 
 

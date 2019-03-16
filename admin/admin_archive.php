@@ -5,7 +5,7 @@
 	require_once('scripts/config.php');
 	confirm_logged_in();
 
-	$display = get_images('declined');
+	$display = get_images(2);
 ?>
 
 <!doctype html>
@@ -14,7 +14,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>ADMINISTRATOR PANEL</title>
-	<link rel="stylesheet" href="../css/main.css">
+	<link rel="stylesheet" href="../css/master.css">
 </head>
 
 <body>
@@ -24,7 +24,8 @@
 	<h3>Choose to either move images to accepted, or fully delete them from the server.</h3>
 
 
-	<?php while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
+	<div class="imgSect">
+		<?php while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
 
 		<div class="orgPoster">
 			<img src="../images/user_images/<?php echo $row['file_name']; ?>" alt="">
@@ -38,25 +39,26 @@
 			</form>
 		</div>
 
-	<?php 
+		<?php 
+			$id = $row['id'];
+			$file = $row['file_name'];
+			$yes_post = 'yes_'.$id;
+			$delete_post = 'delete_'.$id;
 
-		$id = $row['id'];
-		$file = $row['file_name'];
-		$yes_post = 'yes_'.$id;
-		$delete_post = 'delete_'.$id;
+			// they've clicked approve
+			if (isset($_POST[$yes_post])) {
+				echo image_status($id, $file, '1');
+			}
 
-		// they've clicked approve
-		if (isset($_POST[$yes_post])) {
-			echo image_status($id, $file, '1');
-		}
+			// they've clicked delete
+			if (isset($_POST[$delete_post])) {
+				echo image_delete($id, $file);
+			}
 
-		// they've clicked delete
-		if (isset($_POST[$delete_post])) {
-			echo delete_image($id, $file);
-		}
+			endwhile;	
+		?>
 
-		endwhile;	
-	?>
+	</div>
 	
 		<a href="admin_index.php">INDEX</a>
 		<a href="admin_approved.php">ACCEPTED GALLERY</a>
