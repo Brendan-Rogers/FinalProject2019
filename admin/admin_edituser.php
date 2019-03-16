@@ -1,7 +1,7 @@
 <?php
 	require_once('scripts/config.php');
 	
-	confirm_logged_in();
+	confirm_admin();
 
 	$id = $_SESSION['user_id'];
 	$tbl = "tbl_users";
