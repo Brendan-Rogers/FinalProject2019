@@ -71,20 +71,45 @@ function image_status($id, $file, $status) {
 		
 	} // if the current user is in the array, we shouldnt add them again
 
-		// IF
-		// array is longer then required percentange of active users
-			// update images img_status ()
-		
+	if ($status == 1) {
+		// query users' lastlogin times
+		$lastlogin_query = "SELECT user_lastlogin FROM tbl_users";
+		$lastlogin_set = $pdo->query($lastlogin_query);
 
-	// $approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
-	// $approve_image_set = $pdo->prepare($approve_image_query);
-	// $approve_image_set->execute(
-	// 	array(
-	// 		':id' => $id,
-	// 		':status' => $status 
-	// 	)
-	// );
+		$active_users = 0;
+		$today = time();
+		while ($row = $lastlogin_set->fetch(PDO::FETCH_ASSOC)) {
+			$lastlogin = strtotime($row['user_lastlogin']);
+			$diff = $today - $lastlogin;
+			if (round($diff / (60 * 60 * 24)) <= 7) {
+				// having logged in within the past week makes you an active user
+				$active_users += 1;
+			}
+		}
 
+		// if more then half the active admins approve. This can be adjusted
+		if (count($mods) >= ($active_users / 2)) {
+			$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
+			$approve_image_set = $pdo->prepare($approve_image_query);
+			$approve_image_set->execute(
+				array(
+					':id' => $id,
+					':status' => $status 
+				)
+			);
+
+		} 
+	} else {
+		// if we're removing them from the gallery, we dont want a dead link. return that img_status to 0
+		$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
+		$approve_image_set = $pdo->prepare($approve_image_query);
+		$approve_image_set->execute(
+			array(
+				':id' => $id,
+				':status' => $status 
+			)
+		);
+	}
 }
 
 

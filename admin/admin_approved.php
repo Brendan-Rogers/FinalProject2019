@@ -5,7 +5,7 @@
 	include('scripts/config.php');
 	confirm_admin();
 
-	$display = get_images(1);
+	$display = get_images(0);
 ?>
 
 <!doctype html>
@@ -44,7 +44,7 @@
 
 		// they've clicked decline
 		if (isset($_POST[$no_post])) {
-			echo image_status($id, $file, '2');
+			echo image_status($id, $file, '0');
 		}
 
 		endwhile;	

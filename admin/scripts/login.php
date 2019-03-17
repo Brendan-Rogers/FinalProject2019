@@ -1,10 +1,6 @@
 <?php
 
-	function logIn($username, $password, $ip, $date) {
-
-		// TODO
-		// once user successfully logs in, update which users are 'active' or 'dormant'
-			// this is for use in approval algorithm
+	function logIn($username, $password, $ip) {
 
 		require_once('connect.php');
 
@@ -82,9 +78,10 @@
 					echo 'login failed... This user has no ID';
 				}
 
+				$update_time = date('Y/m/d');
 				// only update latest login now that the old one's been passed to session memory
 				$update = "UPDATE tbl_users SET user_ip='{$ip}' WHERE user_id={$id}";
-				$latest = "UPDATE tbl_users SET user_lastlogin='{$date}' WHERE user_id={$id}";
+				$latest = "UPDATE tbl_users SET user_lastlogin='{$update_time}' WHERE user_id={$id}";
 
 				$updateIP = $pdo->query($update);
 				$updateDate = $pdo->query($latest);

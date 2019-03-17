@@ -1,14 +1,13 @@
 <?php
 	require_once('scripts/config.php');
 	$ip = $_SERVER['REMOTE_ADDR'];
-	$time = date("Y/m/d");
 	//echo $ip;
 	if(isset($_POST['submit'])){
 		//echo "Works";
 		$username = trim($_POST['username']);
 		$password = trim($_POST['password']);
 		if($username !== "" && $password !== ""){
-			$result = logIn($username, $password, $ip, $time);
+			$result = logIn($username, $password, $ip);
 			$message = $result;
 		}else{
 			$message = "Please fill out the required fields.";
