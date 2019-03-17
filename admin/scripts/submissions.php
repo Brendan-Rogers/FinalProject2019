@@ -101,11 +101,14 @@ function image_status($id, $file, $status) {
 		} 
 	} else {
 		// if we're removing them from the gallery, we dont want a dead link. return that img_status to 0
+		// this else can only trigger when:
+			// a - it's being called with 0 or 2 from a moderator, which means it should already be 0
+			// b - it's being called by the Admin from the protected 'admin_approved' page, which means they want to for it out
 		$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
 		$approve_image_set = $pdo->prepare($approve_image_query);
 		$approve_image_set->execute(
 			array(
-				':id' => $id,
+				':id' => 0,
 				':status' => $status 
 			)
 		);

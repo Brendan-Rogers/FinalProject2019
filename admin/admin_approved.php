@@ -5,7 +5,7 @@
 	include('scripts/config.php');
 	confirm_admin();
 
-	$display = get_images(0);
+	$display = get_images(1);
 ?>
 
 <!doctype html>
