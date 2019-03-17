@@ -1,6 +1,11 @@
 <?php
 
 	function logIn($username, $password, $ip, $date) {
+
+		// TODO
+		// once user successfully logs in, update which users are 'active' or 'dormant'
+			// this is for use in approval algorithm
+
 		require_once('connect.php');
 
 		// get the amount of times the user has failed to login

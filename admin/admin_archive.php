@@ -5,7 +5,7 @@
 	require_once('scripts/config.php');
 	confirm_logged_in();
 
-	$display = get_images(2);
+	$display = get_images(0);
 ?>
 
 <!doctype html>
@@ -27,6 +27,11 @@
 	<div class="imgSect">
 		<?php while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
 
+		<?php 
+		$mod_decline = explode(",", $row['mod_decline']);
+		if (in_array($_SESSION['user_id'], $mod_decline)):
+		?>
+
 		<div class="orgPoster">
 			<img src="../images/user_images/<?php echo $row['file_name']; ?>" alt="">
 			<br><br>
@@ -40,6 +45,8 @@
 		</div>
 
 		<?php 
+		endif;
+
 			$id = $row['id'];
 			$file = $row['file_name'];
 			$yes_post = 'yes_'.$id;
@@ -60,11 +67,13 @@
 
 	</div>
 	
-		<a href="admin_index.php">INDEX</a>
-		<a href="admin_approved.php">ACCEPTED GALLERY</a>
-		<br>
-		<a href="admin_createuser.php">Create Moderator</a>
-		<a href="admin_edituser.php">Edit Moderator</a>
+		<a href="admin_index.php">Back to INDEX</a>
+		<?php if ($_SESSION['user_mod'] == 1) {
+			echo '
+				<a href="admin_approved.php" style="color: white"> View ITEMS in GALLERY</a>
+			';
+		} ?>
+		<br><br>
 		<a href="scripts/caller.php?caller_id=logout">Sign Out</a>
 	</main>
 

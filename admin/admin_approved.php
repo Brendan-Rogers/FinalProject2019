@@ -3,7 +3,7 @@
 	error_reporting(E_ALL);
 	
 	include('scripts/config.php');
-	confirm_logged_in();
+	confirm_admin();
 
 	$display = get_images(1);
 ?>

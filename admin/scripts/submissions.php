@@ -26,6 +26,13 @@ function image_submit($f_name, $l_name, $email, $file) {
 
 function image_status($id, $file, $status) {
 
+	// img_status is only for DISPLAY IN GALLERY, not DISPLAY IN ADMIN
+
+	// mod_approve and mod_decline are for DISPLAY IN ADMIN
+
+	// img_status should only be updated from 0 to 1, indicating it's recieved enough approval to display
+	// mod_approve and mod_decline are updated to display in admin panel and judge approval ratings
+
 	include('connect.php');
 
 	// 1 - add status
@@ -33,27 +40,93 @@ function image_status($id, $file, $status) {
 	// 		1 = APPROVED
 	//		2 = DECLINED
 
-	$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
-	$approve_image_set = $pdo->prepare($approve_image_query);
-	$approve_image_set->execute(
-		array(
-			':id' => $id,
-			':status' => $status 
-		)
-	);
+	if ($status == 1) {
+		$x = 'mod_approve';
+	} else if ($status == 2) {
+		$x = 'mod_decline';
+	}
 
-	// 2 - add who approved to tbl_images (moderator = $_SESSION['user_id'])
+	// SELECT mod_approve string WHERE id = id
+	$mod_list_query = "SELECT {$x} FROM tbl_images WHERE id = {$id}";
+	$mod_list_set = $pdo->query($mod_list_query);
 
-	$mod_approve_query = "UPDATE tbl_images SET moderator = :moderator WHERE id = :id";
-	$mod_approve_set = $pdo->prepare($mod_approve_query);
-	$mod_approve_set->execute(
-		array(
-			':moderator'=>$_SESSION['user_id'],
-			':id'=>$id
-		)
-	);
+	// fetch the row from our query
+	$mod_array = $mod_list_set->fetch(PDO::FETCH_ASSOC);
+	// mod_string is the column we ask for
+	$mod_string = $mod_array[$x];
+
+	// explode that string into an array
+	$mods = explode(",", $mod_string);
+
+
+	// the current user is not in $mods
+	if (!in_array($_SESSION['user_id'], $mods)) {
+
+		// insert the current user into mod_approve string
+		$mod_string .= ','.$_SESSION['user_id'];
+
+		// replace the old string with this updated string, featuring our mods decision
+		$mod_update_query = "UPDATE tbl_images SET {$x} = '{$mod_string}' WHERE id = {$id}";
+		$mod_update_set = $pdo->query($mod_update_query);
+		
+	} // if the current user is in the array, we shouldnt add them again
+
+		// IF
+		// array is longer then required percentange of active users
+			// update images img_status ()
+		
+
+	// $approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
+	// $approve_image_set = $pdo->prepare($approve_image_query);
+	// $approve_image_set->execute(
+	// 	array(
+	// 		':id' => $id,
+	// 		':status' => $status 
+	// 	)
+	// );
 
 }
+
+
+
+function get_images($status) {
+
+	include('connect.php');
+
+	// $status
+	// = 0 - NEW
+	// = 1 - APPROVED
+	// = 2 - ARCHIVED
+
+	// TODO
+	// make this work with mod_approve and mod_decline instead of img_status
+
+
+	// 1 - explode both the strings into arrays
+
+	// 2 - IF
+	// $x = NEW
+		// IF neither string contains $_SESSION['user_id']
+			// return picture
+	// $x = APPROVED
+		// IF mod_approve contains $_SESSION['user_id'] && we're in admin_approved (this doesn't go for gallery.php)
+			// return picture
+	// $x = DECLINED
+		// IF mod_decline contains $_SESSION['user_id']
+			// return picture
+
+	$get_images_query = "SELECT id, file_name, upload_time, mod_approve, mod_decline FROM tbl_images WHERE img_status = {$status}";
+	$get_images_set = $pdo->query($get_images_query);
+
+	if ($get_images_set) {
+		return $get_images_set;
+	} else {
+		return 'There are no submissions.';
+	}
+
+
+}
+
 
 function image_delete($id, $file) {
 
@@ -81,35 +154,6 @@ function image_delete($id, $file) {
 	
 }
 
-function get_images($x) {
-
-	include('connect.php');
-
-	// $x
-	// = 0 - NEW
-	// = 1 - APPROVED
-	// = 2 - ARCHIVED
-
-	$get_images_query = "SELECT id, file_name, upload_time FROM tbl_images WHERE img_status = {$x}";
-	$get_images_set = $pdo->query($get_images_query);
-
-	if ($get_images_set) {
-		return $get_images_set;
-	} else {
-		return 'There are no more pre-approval submissions.';
-	}
-
-
-}
-
 
 ?>
-
-
-
-
-
-
-
-
 
