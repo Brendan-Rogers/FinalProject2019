@@ -31,7 +31,7 @@
 		$mod_decline = explode(",", $row['mod_decline']);
 
 		// only display image if user hasn't approved or declined it
-		// if (!in_array($_SESSION['user_id'], $mod_approve) && !in_array($_SESSION['user_id'], $mod_decline)):
+		if (!in_array($_SESSION['user_id'], $mod_approve) && !in_array($_SESSION['user_id'], $mod_decline)):
 	 ?>
 
 	<div class="orgPoster">
@@ -48,7 +48,7 @@
 
 	<?php 
 
-		// endif;
+		endif;
 
 		$id = $row['id'];
 		$file = $row['file_name'];

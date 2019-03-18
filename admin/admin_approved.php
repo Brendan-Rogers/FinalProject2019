@@ -44,7 +44,7 @@
 
 		// they've clicked decline
 		if (isset($_POST[$no_post])) {
-			echo image_status($id, $file, '0');
+			echo image_status($id, $file, '3');
 		}
 
 		endwhile;	

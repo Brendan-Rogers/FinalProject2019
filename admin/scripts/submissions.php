@@ -35,15 +35,21 @@ function image_status($id, $file, $status) {
 
 	include('connect.php');
 
-	// 1 - add status
+	// add status
 	// 		0 = NEW
 	// 		1 = APPROVED
 	//		2 = DECLINED
+	// 		3 = OUT of ROTATION, STILL IN SYSTEM
 
 	if ($status == 1) {
 		$x = 'mod_approve';
 	} else if ($status == 2) {
 		$x = 'mod_decline';
+	} else if ($status == 3) {
+		// update img_status to 3
+		$approve_image_query = "UPDATE tbl_images SET img_status = {$status}, mod_approve = 0, mod_decline = 0 WHERE id = {$id}";
+		$approve_image_set = $pdo->query($approve_image_query);
+		return 'Moved Out of Rotation.';
 	}
 
 	// SELECT mod_approve string WHERE id = id
@@ -87,8 +93,11 @@ function image_status($id, $file, $status) {
 			}
 		}
 
+		echo "Mods who've upvoted: ".count($mods).'<br>Active Mods: '.$active_users;
+
 		// if more then half the active admins approve. This can be adjusted
 		if (count($mods) >= ($active_users / 2)) {
+
 			$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
 			$approve_image_set = $pdo->prepare($approve_image_query);
 			$approve_image_set->execute(
