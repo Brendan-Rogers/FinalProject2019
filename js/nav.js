@@ -5,17 +5,22 @@ let menuBut = document.querySelector('.menuButton'),
     nav = document.querySelector('.navArea'),
     body = document.querySelector('body'),
     cont = document.querySelector('.page');
+info = document.querySelector('.navInfo');
 
 
-    
-function openMenu(){
+
+function openMenu() {
     nav.classList.remove('hidden');
+    nav.style.width = "40%";
     body.classList.add('lock');
+    nav.classList.remove('op');
+
 };
-    
-function closeMenu(){
-    nav.classList.add('hidden');
+
+function closeMenu() {
+    nav.style.width = "0";
     body.classList.remove('lock');
+    nav.classList.add('op');
 };
 
 
