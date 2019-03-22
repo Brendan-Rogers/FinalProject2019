@@ -48,6 +48,8 @@
 
 .op{
     opacity:0;
+    -webkit-filter: blur(5px); /* Safari 6.0 - 9.0 */
+    filter: blur(3px);
 }
 .infoList{
     margin-bottom: 20px;
@@ -86,3 +88,9 @@
     text-decoration: underline;
 }
 
+
+//left dots
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    background:#000000;
+
+}

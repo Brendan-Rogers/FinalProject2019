@@ -32,6 +32,10 @@ h1, h2 {
   grid-template-columns: 1fr 1fr 1fr;
 }
 
+.fp-section.fp-table {
+  display: grid !important;
+}
+
 #landing {
   background: #bf26ee;
   background-blend-mode: multiply;
@@ -252,6 +256,9 @@ footer {
 
 .op {
   opacity: 0;
+  -webkit-filter: blur(5px);
+  /* Safari 6.0 - 9.0 */
+  filter: blur(3px);
 }
 
 .infoList {
@@ -289,6 +296,10 @@ footer {
 
 .closeButton:hover {
   text-decoration: underline;
+}
+
+.fp-section.fp-table {
+  display: inherit;
 }
 
 /* CSS Document */

@@ -10,11 +10,9 @@ info = document.querySelector('.navInfo');
 
 
 function openMenu() {
-    nav.classList.remove('hidden');
+    nav.classList.remove('op');
     nav.style.width = "40%";
     body.classList.add('lock');
-    nav.classList.remove('op');
-
 };
 
 function closeMenu() {

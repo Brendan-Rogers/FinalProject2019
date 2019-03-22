@@ -9,25 +9,27 @@ new Vue({
             options: {
                 controlArrows: true,
                 // scrollBar: true,
-                // menu: '#menu',
-                //anchors: ['page1', 'page2', 'page3'],
+                menu: '#navList',
+                navigation: true,
+                anchors: ['page1', 'page2', 'page3', 'page4', 'page5'],
 
 
-            },
+            }
+        }
+    },
+    methods: {
+        afterLoad: function () {
+        },
+        toggleNavigation: function () {
+            this.options.navigation = !this.options.navigation
+        },
+        toggleScrollbar: function () {
+            this.options.scrollBar = !this.options.scrollBar
         }
     }
+})
 
-});
 
-//creating the section div
-var section = document.createElement('div');
-section.className = 'section';
-
-//adding section
-document.querySelector('#fullpage').appendChild(section);
-
-//vm.$refs.fullpage.build();
-this.$refs.fullpage.build();
 
 
 
