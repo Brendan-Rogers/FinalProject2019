@@ -324,5 +324,154 @@ footer .siteTitle {
 
   .imgSect {
     margin-top: 50px; } }
+.siteTitleInv {
+  margin: 0;
+  font-size: 2em;
+  margin-left: 55px;
+  display: inline-block;
+  padding-top: 60px;
+  font-weight: bold;
+  color: #fff; }
+
+.menuButtonInv {
+  color: #ffffff; }
+
+.eventTop {
+  height: 100vh;
+  width: 100%;
+  background-color: black;
+  color: #fff; }
+
+.eventTitle {
+  font-family: "Montserrat", sans-serif;
+  font-weight: bold;
+  font-size: 3em;
+  width: 280px;
+  margin-left: 55px;
+  margin-top: 60vh; }
+
+.eventList {
+  width: 100%; }
+
+.eventPreview {
+  width: 100%;
+  background-color: #4a4a4a;
+  display: flex;
+  margin-top: 3px; }
+
+.eventPImgCon {
+  width: 120px;
+  margin-left: 1%;
+  margin-top: 1%;
+  margin-bottom: 1%;
+  margin-right: 3%; }
+
+.eventPImg {
+  width: 100%; }
+
+.eventPInfo {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 1%; }
+
+.eventPName {
+  color: #fff;
+  font-size: 2em;
+  letter-spacing: .15em; }
+
+.eventPLoc {
+  color: #fff;
+  font-weight: initial;
+  margin-bottom: 40px; }
+
+.eventPDate {
+  color: #fff; }
+
+.eventPButton {
+  text-decoration: none;
+  color: #4a4a4a;
+  background-color: #ebebeb;
+  height: 2.4em;
+  padding: 6px 2%;
+  border-radius: 25px;
+  padding-top: 12px;
+  font-weight: bold;
+  margin-top: 55px;
+  margin-left: 50vw;
+  width: 188px;
+  text-align: center; }
+
+.event {
+  min-height: 100vh; }
+
+.event1 {
+  background-color: #f5a9a9; }
+
+.event2 {
+  background-color: #a9f4f5; }
+
+.event3 {
+  background-color: #b4f5a9; }
+
+.eventCon {
+  display: flex;
+  flex-direction: column;
+  margin-left: 5%; }
+
+.eventName {
+  font-size: 2.8em;
+  font-weight: bold;
+  width: 200px;
+  margin-top: 40px; }
+
+.eventName1 {
+  color: #fff; }
+
+.eventName2 {
+  color: black; }
+
+.eventImgs {
+  width: 100%;
+  display: flex;
+  margin-top: 30px;
+  flex-wrap: wrap; }
+
+.eventImg1 {
+  width: 560px;
+  height: 280px;
+  min-width: 280px;
+  background-color: black;
+  margin-bottom: 50px; }
+
+.eventImg2 {
+  width: 280px;
+  height: 280px;
+  min-width: 280px;
+  margin-left: 2%;
+  background-color: black; }
+
+.eventText {
+  display: flex;
+  color: #fff;
+  font-size: 1.2em;
+  line-height: 1.4em; }
+
+.eventText1 {
+  color: #fff; }
+
+.eventText2 {
+  color: black; }
+
+.eventBody1 {
+  width: 35%;
+  margin-right: 10%; }
+
+.eventBody2 {
+  width: 40%; }
+
+.footerEvent {
+  background-color: #313131;
+  margin-top: 0 !important;
+  height: 100px;
+  padding-bottom: 140px; }
 
 /*# sourceMappingURL=master.css.map */
