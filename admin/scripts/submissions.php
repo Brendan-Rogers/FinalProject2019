@@ -40,6 +40,7 @@ function image_status($id, $file, $status) {
 	// 		1 = APPROVED
 	//		2 = DECLINED
 	// 		3 = OUT of ROTATION, STILL IN SYSTEM
+	// 		4 = FEATURED image, same as APPROVED
 
 	if ($status == 1) {
 		$x = 'mod_approve';
@@ -108,49 +109,11 @@ function image_status($id, $file, $status) {
 			);
 
 		} 
-	} else {
-		// if we're removing them from the gallery, we dont want a dead link. return that img_status to 0
-		// this else can only trigger when:
-			// a - it's being called with 0 or 2 from a moderator, which means it should already be 0
-			// b - it's being called by the Admin from the protected 'admin_approved' page, which means they want to for it out
-		$approve_image_query = "UPDATE tbl_images SET img_status = :status WHERE id = :id";
-		$approve_image_set = $pdo->prepare($approve_image_query);
-		$approve_image_set->execute(
-			array(
-				':id' => 0,
-				':status' => $status 
-			)
-		);
 	}
 }
 
-
-
 function get_images($status) {
-
 	include('connect.php');
-
-	// $status
-	// = 0 - NEW
-	// = 1 - APPROVED
-	// = 2 - ARCHIVED
-
-	// TODO
-	// make this work with mod_approve and mod_decline instead of img_status
-
-
-	// 1 - explode both the strings into arrays
-
-	// 2 - IF
-	// $x = NEW
-		// IF neither string contains $_SESSION['user_id']
-			// return picture
-	// $x = APPROVED
-		// IF mod_approve contains $_SESSION['user_id'] && we're in admin_approved (this doesn't go for gallery.php)
-			// return picture
-	// $x = DECLINED
-		// IF mod_decline contains $_SESSION['user_id']
-			// return picture
 
 	$get_images_query = "SELECT id, file_name, upload_time, mod_approve, mod_decline FROM tbl_images WHERE img_status = {$status}";
 	$get_images_set = $pdo->query($get_images_query);
@@ -160,8 +123,6 @@ function get_images($status) {
 	} else {
 		return 'There are no submissions.';
 	}
-
-
 }
 
 
