@@ -6,9 +6,13 @@
       $errors= array();
       $file_name = $_FILES['image']['name'];
       $file_size =$_FILES['image']['size'];
-      $file_tmp =$_FILES['image']['tmp_name'];
-      $file_type=$_FILES['image']['type'];
-      $file_ext=strtolower(end(explode('.',$_FILES['image']['name'])));
+      $file_tmp = $_FILES['image']['tmp_name'];
+      $file_type = $_FILES['image']['type'];
+      $file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
+
+      $fileinfo = getimagesize($_FILES["image"]["tmp_name"]);
+      $width = $fileinfo[0];
+      $height = $fileinfo[1];
 
       $f_name = $_POST['f_name'];
       $l_name = $_POST['l_name'];
@@ -16,23 +20,24 @@
       
       $extensions= array("jpeg","jpg","png");
 
-      if ($email === false) {
+      if (!$email) {
          $errors[] = 'That is not an email address. Nice try!';
       }
-      
       if(in_array($file_ext,$extensions)=== false){
          $errors[]="extension not allowed, please choose a JPEG or PNG file.";
       }
-      
       if($file_size > 2097152){
          $errors[]='File size must be less then 2 MB';
+      }
+      if ($width != 800 || $height != 1035) {
+         $errors[] = 'File must be exactly 800px wide by 1035px tall';
       }
       
       if(empty($errors)==true){
          $new_file_name = strtolower($f_name).'_'.time().'.'.$file_ext;
 
          move_uploaded_file($file_tmp,'images/user_images/'.$new_file_name);
-         echo image_submit($f_name, $l_name, $email, $new_file_name);
+         echo image_submit($f_name, $l_name, $email, $new_file_name).$width.$height;
 
 
       }else{
