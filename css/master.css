@@ -477,6 +477,93 @@ footer .siteTitle {
   height: 100px;
   padding-bottom: 140px; }
 
+@media screen and (max-width: 775px) {
+  .siteTitleInv {
+    font-size: 1.6em;
+    margin-left: 45px;
+    padding-top: 50px; }
+
+  .menuButtonInv {
+    top: 60px;
+    right: 50px; }
+
+  .eventTitle {
+    font-size: 2.2em;
+    width: 260px;
+    margin-left: 45px; }
+
+  .eventPreview {
+    flex-wrap: wrap; }
+
+  .eventPImgCon {
+    width: 95px;
+    margin-left: 2%;
+    margin-top: 8%;
+    margin-bottom: 1px;
+    margin-right: 3%; }
+
+  .eventPName {
+    font-size: 1.4em;
+    letter-spacing: .08em;
+    width: 95%; }
+
+  .eventPLoc {
+    margin-bottom: 25px;
+    width: 95%; }
+
+  .eventPDate {
+    width: 95%; }
+
+  .eventPButton {
+    height: 2.4em;
+    padding: 6px 2%;
+    border-radius: 25px;
+    padding-top: 12px;
+    margin-top: 12px;
+    margin-left: 30vw;
+    width: 155px;
+    margin-bottom: 15px; }
+
+  .eventCon {
+    margin-left: 0%;
+    width: 100%; }
+
+  .eventName {
+    font-size: 2.4em;
+    width: 185px;
+    margin-top: 30px;
+    margin-left: 25%; }
+
+  .eventImgs {
+    justify-content: space-around; }
+
+  .eventImg1 {
+    width: 300px;
+    height: 150px;
+    min-width: 300px; }
+
+  .eventImg2 {
+    width: 150px;
+    height: 150px;
+    min-width: 150px;
+    margin-left: 2%;
+    background-color: black; }
+
+  .eventText {
+    font-size: 1em;
+    line-height: 1.2em;
+    flex-wrap: wrap;
+    width: 90%;
+    margin-left: 5%;
+    justify-content: space-around; }
+
+  .eventBody1 {
+    width: 155px;
+    margin-top: 30px; }
+
+  .eventBody2 {
+    width: 165px;
+    margin-top: 30px; } }
 .lightbox {
   width: 0%;
   height: 100%;
