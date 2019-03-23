@@ -47,32 +47,41 @@
 ?>
 
 <html>
-   <body>
-      
-      <form action="" method="POST" enctype="multipart/form-data">
-         
-         <label>First Name:</label>
-         <input type="text" name="f_name">
+<link rel="stylesheet" href="css/master.css">
+
+   <body id="form">
+      <div id="formArea">
+      <div id="imagePrev"></div>
+      <div id="formContainer">
+    
+      <form  class="form" action="" method="POST" enctype="multipart/form-data">
+         <h2>Submit your Work</h2>
+        <!-- <label class="hidden">First Name:</label>-->
+         <input type="text" name="f_name" placeholder="First Name">
 
          <br><br>
 
-         <label>Last Name:</label>
-         <input type="text" name="l_name">
+         <!--<label>Last Name:</label>-->
+         <input type="text" name="l_name" placeholder="Last Name">
+
+         <br><br> 
+
+         <!--<label>Email Address:</label>-->
+         <input type="email" name="email" placeholder="Email Address">
 
          <br><br>
-
-         <label>Email Address:</label>
-         <input type="email" name="email">
-
-         <br><br>
-
+       
          <input type="file" name="image" accept="image/*" />
 
          <br><br><br>
+   
+         <button class="btn">Upload a file</button>
 
-         <input type="submit"/>
+         <input class="formBtn" type="submit"/>
+ 
       </form>
-      
+      </div>
+</div>
    </body>
 </html>
 
