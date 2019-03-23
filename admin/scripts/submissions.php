@@ -135,10 +135,6 @@ function get_images($status) {
 	// = 1 - APPROVED
 	// = 2 - ARCHIVED
 
-	// TODO
-	// make this work with mod_approve and mod_decline instead of img_status
-
-
 	// 1 - explode both the strings into arrays
 
 	// 2 - IF
@@ -152,7 +148,7 @@ function get_images($status) {
 		// IF mod_decline contains $_SESSION['user_id']
 			// return picture
 
-	$get_images_query = "SELECT id, file_name, upload_time, mod_approve, mod_decline FROM tbl_images WHERE img_status = {$status}";
+	$get_images_query = "SELECT * FROM tbl_images WHERE img_status = {$status}";
 	$get_images_set = $pdo->query($get_images_query);
 
 	if ($get_images_set) {
