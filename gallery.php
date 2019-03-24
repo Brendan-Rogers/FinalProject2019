@@ -60,7 +60,11 @@
 
             <?php  while ($row = $display->fetch(PDO::FETCH_ASSOC)): ?>
 
-                <div class="orgPoster"><img src="images/user_images/<?php echo $row['file_name']; ?>" alt="submission <?php echo $row['id']; ?>"></div>
+                <div class="orgPoster">
+                    <img src="images/user_images/<?php echo $row['file_name']; ?>" alt="submission <?php echo $row['id']; ?>" class="orgPosterImg">
+                    <h3 class="pArtist">Artist: <?php echo $row['f_name'].' '.$row['l_name']; ?></h3>
+                    <h4>Submitted on <?php $date = gmdate("Y/m/d", strtotime($row['upload_time'])); echo $date; ?></h4>
+                </div>
 
             <?php endwhile; ?>
 
@@ -78,6 +82,17 @@
         </footer>
     </main>
 
+    <section class="lightbox">
+		<h2 class="hidden">light box</h2>
+		<span class="closeLightbox">x</span>
+
+		<div class="imgCon">
+			<img src="images/user_images/drew_1553281065.png" alt="user poster" class="lbImg">
+		</div>
+
+	</section>
+
     <script src="js/nav.js"></script>
+    <script src="js/lightbox.js"></script>
 </body>
 </html>
