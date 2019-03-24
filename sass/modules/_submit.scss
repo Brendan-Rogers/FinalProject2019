@@ -1,0 +1,133 @@
+#form{
+    background:$blue;
+    background-image:url(../images/splat2png.png);
+    background-position:center;
+    background-size: cover;
+    height:100%;
+    //overflow:hidden
+    padding:5%;
+}
+
+#formArea{
+    margin-top:-1em;
+    display:grid;
+    margin: 2vh auto;
+}
+
+#formContainer{
+    grid-row:2;
+    position: relative;
+    width: 25%;
+    padding: 10px 25px;
+    background:white;
+    align-self:start;
+    margin:0 auto;
+      }
+
+.form{ 
+     width: 100%;
+   
+label{
+   // text-align: center;
+    display:block;
+}
+
+    h2{
+        text-align: center;
+        color: $darkGrey;
+        font-weight:bold;
+        font-size:20px;
+        margin:1em auto;
+        
+      }
+    
+    }
+
+    .formBtn , input , .btn{
+        width: 100%;
+        height: 45px;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        font-weight: lighter;
+        margin-bottom: 1em;
+     
+
+    }
+    input{
+        background:rgb(236, 236, 236);
+        padding-left:20px;
+        font-size:12px;
+    }
+
+    .formBtn, .btn{
+        color: #fff;
+        cursor: pointer;
+        background:$blue;;
+        transition: 0.4s ease;
+      }
+      
+      .formBtn:hover{ 
+          background:#026173;
+        }
+          input[type=file] {
+           opacity:0;
+            position: absolute;
+            top:385px;
+            cursor: pointer; //get rid of "no file selected"
+          
+        
+          }
+          
+          #imagePrev{
+              background-image:url(../images/lungSquare.jpg);
+              background-position:center;
+              background-size: cover;
+              border:0.5px solid white;
+            
+              position: relative;
+              width:100%;
+             height: 400px;
+              padding: 10px 25px;
+             margin: 0 auto;
+             align-self: end;
+    
+            
+          }
+
+
+
+        @media only screen and (min-width : 280px) {
+            #formContainer{
+              width:100%;
+            }
+          }
+
+          
+          @media only screen and (min-width : 550px) {
+            #formArea{
+                grid-template-columns: 1fr 1fr;
+            }
+            #formContainer{ 
+                width:100%;
+                grid-row:1;
+               
+               // align-self:end !important;
+             }
+             #imagePrev{
+               // width: 500px;
+                height:100%;
+                grid-column:2;
+                //align-self:start !important;
+              }
+          }
+          
+          @media only screen and (min-width : 1000px) {
+
+            #formArea{
+                width:850px;
+            }
+          
+        }
+      
+          
