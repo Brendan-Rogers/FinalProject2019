@@ -114,8 +114,8 @@ function image_status($id, $file, $status) {
 
 function get_images($status) {
 	include('connect.php');
-
-	$get_images_query = "SELECT id, file_name, upload_time, mod_approve, mod_decline FROM tbl_images WHERE img_status = {$status}";
+  
+	$get_images_query = "SELECT * FROM tbl_images WHERE img_status = {$status}";
 	$get_images_set = $pdo->query($get_images_query);
 
 	if ($get_images_set) {
