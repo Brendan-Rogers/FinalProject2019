@@ -42,6 +42,8 @@
             <li class="infoList">(555)-555-5555</li>
             <li class="infoList">Awareness@ODP.ca</li>
         </ul>
+
+        <a href="admin/admin_login.php" class="adminLink"><img class="adminLock" src="images/lock-icon.svg" alt="admin link"></a>
     </nav>
 
     <a href="#" class="menuButton">Menu</a>
