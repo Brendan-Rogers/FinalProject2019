@@ -17,9 +17,9 @@ function image_submit($f_name, $l_name, $email, $file) {
 	);
 
 	if ($new_image_set) {
-		return 'Successfully inserted into table';
+		return 'Your poster has been submitted!';
 	} else {
-		return 'Insert query failed';
+		return 'Theres was a problem on our end. Try again later!';
 	}
 
 }
