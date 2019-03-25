@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <nav class="navArea hidden">
+    <nav class="navArea op">
         <h1 class="hidden">Main Navigation</h1>
 
         <a href="#" class="closeButton">Close</a>
