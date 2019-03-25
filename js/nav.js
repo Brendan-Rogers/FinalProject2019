@@ -10,8 +10,12 @@ info = document.querySelector('.navInfo');
 
 
 function openMenu() {
+    if (window.matchMedia("(min-width: 775px)").matches) {
+        nav.style.width = "40%";
+    } else {
+        nav.style.width = "100%";
+    }
     nav.classList.remove('op');
-    nav.style.width = "40%";
     body.classList.add('lock');
 };
 

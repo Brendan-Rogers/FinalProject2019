@@ -31,9 +31,9 @@
 
         <ul class="navList">
             <li class="navOpt"><a href="index.html" class="navLink">home.</a></li>
-            <li class="navOpt"><a href="#" class="navLink">about.</a></li>
+            <li class="navOpt"><a href="index.html" class="navLink">about.</a></li>
             <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
-            <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
+            <li class="navOpt"><a href="events.html" class="navLink">events.</a></li>
         </ul>
 
         <ul class="navInfo">
