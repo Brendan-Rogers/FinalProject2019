@@ -1,99 +1,179 @@
 #form{
-    background:$blue;
-    background-image:url(../images/splat2png.png);
-    background-position:center;
-    background-size: cover;
-    height:100%;
-    //overflow:hidden
-    padding:5%;
+  background:$blue;
+  background-image:url(../images/splat2png.png);
+  background-position:center;
+  background-size: cover;
+  height:100%;
+  //overflow:hidden
+  padding:5%;
 }
 
 #formArea{
-    margin-top:-1em;
-    display:grid;
-    margin: 2vh auto;
+  margin-top:-1em;
+  display:grid;
+  margin: 2vh auto;
 }
 
 #formContainer{
-    grid-row:2;
-    position: relative;
-    width: 25%;
-    padding: 10px 25px;
-    background:white;
-    align-self:start;
-    margin:0 auto;
-      }
+  grid-row:2;
+  position: relative;
+  width: 25%;
+  padding: 10px 25px;
+  background:white;
+  align-self:start;
+  margin:0 auto;
+    }
 
 .form{ 
-     width: 100%;
-   
+   width: 100%;
+ 
 label{
-   // text-align: center;
-    display:block;
+ // text-align: center;
+  display:block;
 }
 
-    h2{
-        text-align: center;
-        color: $darkGrey;
-        font-weight:bold;
-        font-size:20px;
-        margin:1em auto;
-        
-      }
-    
-    }
-
-    .formBtn , input , .btn{
-        width: 100%;
-        height: 45px;
-        border: none;
-        border-radius: 5px;
-        font-size: 18px;
-        font-weight: lighter;
-        margin-bottom: 1em;
-     
-
-    }
-    input{
-        background:rgb(236, 236, 236);
-        padding-left:20px;
-        font-size:12px;
-    }
-
-    .formBtn, .btn{
-        color: #fff;
-        cursor: pointer;
-        background:$blue;;
-        transition: 0.4s ease;
-      }
+  h2{
+      text-align: center;
+      color: $darkGrey;
+      font-weight:bold;
+      font-size:20px;
+      margin:1em auto;
       
-      .formBtn:hover{ 
-          background:#026173;
-        }
-          input[type=file] {
-           opacity:0;
-            position: absolute;
-            top:385px;
-            cursor: pointer; //get rid of "no file selected"
-          
+    }
+  
+  }
+
+  .formBtn , input , .btn{
+      width: 100%;
+      height: 45px;
+      border: none;
+      border-radius: 5px;
+      font-size: 18px;
+      font-weight: lighter;
+      margin-bottom: 1em;
+   
+
+  }
+  input{
+      background:rgb(236, 236, 236);
+      padding-left:20px;
+      font-size:12px;
+  }
+
+  .formBtn, .btn{
+      color: #fff;
+      cursor: pointer;
+      background:$blue;;
+      transition: 0.4s ease;
+    }
+    
+    .formBtn:hover{ 
+        background:#026173;
+      }
+        input[type=file] {
+         opacity:0;
+          position: absolute;
+          top:420px;
+          cursor: pointer; //get rid of "no file selected"
         
-          }
-          
+      
+        }
+      
           #imagePrev{
               background-image:url(../images/lungSquare.jpg);
               background-position:center;
               background-size: cover;
               border:0.5px solid white;
-            
               position: relative;
               width:100%;
              height: 400px;
               padding: 10px 25px;
              margin: 0 auto;
              align-self: end;
+            }
+
+       
+.terms {
+  margin-top:40px;
+  text-align:center;
+  display: block;
+  position: relative;
+ // padding-left: 35px;
+  margin-bottom: -40px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  font-size:12px;
+  a{
+    color:$blue;
+    font-size:10px;
     
-            
-          }
+  }
+}
+
+
+.terms input {
+
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+  left: 50%;
+   top: -25;
+  z-index: 5;
+}
+
+
+
+.checkmark {
+  position: absolute;
+  left:47%;
+  top:-25;
+
+  height: 25px;
+  width: 25px;
+  border-radius:5px;
+  background-color: #eee;
+}
+
+.terms:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+
+.terms input:checked ~ .checkmark {
+  background-color:$blue;
+}
+
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.terms input:checked ~ .checkmark:after {
+  display: block;
+}
+
+
+.terms .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+} 
+     
 
 
 

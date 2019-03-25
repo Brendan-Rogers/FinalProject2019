@@ -101,17 +101,21 @@
 
          <br><br>
          
-         <input type="checkbox" name="terms" required> <label>I agree with the </label> <a href="assets/terms/terms-and-conditions.pdf">Terms and Conditions</a>
-
+         <div class="terms">
+         <input type="checkbox" name="terms" required> <label>I agree with the </label> 
+         <span class="checkmark"></span>
+         <a href="assets/terms/terms-and-conditions.pdf">Terms and Conditions</a>
+         </div>
          <br><br>
        
          <input type="file" name="image" accept="image/*" />
 
          <br><br><br>
-   
+     
          <button class="btn">Upload a file</button>
 
          <input class="formBtn" type="submit"/>
+
  
       </form>
       </div>
