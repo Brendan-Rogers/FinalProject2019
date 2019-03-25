@@ -47,6 +47,9 @@
     </nav>
 
     <a href="#" class="menuButton">Menu</a>
+    <div class="submit_button">
+        <a href="submit.php"><img style="background-color: white;" src="images/submit_button.svg" alt="submit button"></a>
+    </div>
 
     <main class="container page">
         <h1 class="siteTitle">ODP</h1>
@@ -93,7 +96,7 @@
         <span class="closeLightbox">x</span>
 
         <div class="imgCon">
-            <img src="images/user_images/drew_1553281065.png" alt="user poster" class="lbImg">
+            <img src="images/user_images/#" alt="user poster" class="lbImg">
         </div>
 
     </section>
