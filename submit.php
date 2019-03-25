@@ -81,7 +81,9 @@
 
 
       <div id="formArea">
-      <div id="imagePrev" style="background-image: url(./images/lung.png);"></div>
+      <div id="imagePrev">
+         <video src="videos/guide.mp4" autoplay muted controls></video>
+      </div>
       <div id="formContainer">
     
       <form  class="form" action="" method="POST" enctype="multipart/form-data">
