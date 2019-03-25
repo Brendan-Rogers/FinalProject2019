@@ -18,24 +18,30 @@
 <html>
 
 <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<meta charset="UTF-8">
 	<title>ADMIN PANEL LOGIN</title>
+    <link rel="stylesheet" href="../css/master.css">
 </head>
 
-<body>
+<body class="adminBody">
 	<?php if(!empty($message)){ echo $message;} ?>
-	
-	<h2>ENTER YOUR LOGIN INFORMATION BELOW:</h2>
 
-	<form action="admin_login.php" method="post">
-		<label>Username:</label>
-		<input type="text" name="username" value="">
-		<br>
-		<label>Password</label>
-		<input type="password" name="password" value="">
-		<br><br>
-		<input type="submit" name="submit" value="Show me the money">
-	</form>
+	<div class="adminLog">
+	
+		<h2 class="adminTitle">ENTER YOUR LOGIN INFORMATION BELOW:</h2>
+
+		<form action="admin_login.php" method="post" class="adminForm">
+			<label>Username:</label>
+			<input type="text" name="username" value="">
+			<br>
+			<label>Password:</label>
+			<input type="password" name="password" value="">
+			<br><br>
+			<input type="submit" name="submit" value="Login">
+		</form>
+	</div>
 
 </body>
 
