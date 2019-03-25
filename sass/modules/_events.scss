@@ -163,16 +163,18 @@
     width: 280px;
     height: 280px;
     min-width: 280px;
-    margin-left: 2%;
     background-color: black;
     overflow: hidden;
+    margin-left: 1%;
 }
 
 .eventText{
-    display: flex;
-    color: #fff;
-    font-size: 1.2em;
-    line-height: 1.4em;
+    
+display: flex;
+color: #fff;
+font-size: .8em;
+line-height: 1.4em;
+margin: 5%;
 }
 
 .eventText1{
