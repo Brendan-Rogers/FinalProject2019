@@ -521,12 +521,13 @@ input[type=file] {
 
 .eventPInfo {
   font-family: "Montserrat", sans-serif;
-  margin-top: 1%; }
+  margin-top: 1%;
+  width: 50%; }
 
 .eventPName {
   color: #fff;
   font-size: 2em;
-  letter-spacing: .15em; }
+  letter-spacing: .10em; }
 
 .eventPLoc {
   color: #fff;
@@ -546,7 +547,7 @@ input[type=file] {
   padding-top: 12px;
   font-weight: bold;
   margin-top: 55px;
-  margin-left: 50vw;
+  margin-left: 18vw;
   width: 188px;
   text-align: center; }
 
@@ -570,7 +571,7 @@ input[type=file] {
 .eventName {
   font-size: 2.8em;
   font-weight: bold;
-  width: 200px;
+  width: 340px;
   margin-top: 40px; }
 
 .eventName1 {
