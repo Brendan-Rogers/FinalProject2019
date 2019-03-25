@@ -93,7 +93,7 @@
         <span class="closeLightbox">x</span>
 
         <div class="imgCon">
-            <img src="images/user_images/drew_1553281065.png" alt="user poster" class="lbImg">
+            <img src="images/user_images/#" alt="user poster" class="lbImg">
         </div>
 
     </section>
