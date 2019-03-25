@@ -50,8 +50,33 @@
 <link rel="stylesheet" href="css/master.css">
 
    <body id="form">
+
+   <!--<nav>Menu</nav>-->
+   <nav class="navArea op">
+     <h1 class="hidden">Main Navigation</h1>
+
+     <a href="#" class="closeButton">Close</a>
+
+     <ul class="navList">
+         <li data-menuanchor="page1" class="navOpt"><a href="#" class="navLink">home.</a></li>
+         <li class="navOpt"><a href="#" class="navLink">about.</a></li>
+         <li class="navOpt"><a href="gallery.php" class="navLink">gallery.</a></li>
+         <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
+     </ul>
+
+     <ul class="navInfo">
+         <li class="infoList">130 Dundas Street, 5th floor</li>
+         <li class="infoList">London, Ontario</li>
+         <li class="infoList">(555)-555-5555</li>
+         <li class="infoList">Awareness@ODP.ca</li>
+     </ul>
+   </nav>
+
+   <a href="#" class="menuButton menuHome">Menu</a>
+
+
       <div id="formArea">
-      <div id="imagePrev"></div>
+      <div id="imagePrev" style="background-image: url(./images/lung.png);"></div>
       <div id="formContainer">
     
       <form  class="form" action="" method="POST" enctype="multipart/form-data">
@@ -82,7 +107,10 @@
       </form>
       </div>
 </div>
-   </body>
+
+<script src="js/nav.js"></script>
+
+</body>
 </html>
 
 

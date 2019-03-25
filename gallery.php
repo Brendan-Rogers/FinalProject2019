@@ -4,9 +4,13 @@
     
     include('admin/scripts/config.php');
 
-    $display = get_images(1);
+    if (isset($_GET['display'])) {
+        $mode = $_GET['display'];
+        $display = index_photos($mode);
+    } else {
+        $display = index_photos('all');
+    }  
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -50,9 +54,9 @@
         
 
         <ul class="imgFilter">
-            <li class="filterChoice"><a href="#">All</a></li>
-            <li class="filterChoice"><a href="#">Recent</a></li>
-            <li class="filterChoice"><a href="#">Featured</a></li>
+            <li class="filterChoice"><a href="gallery.php?display=all">All</a></li>
+            <li class="filterChoice"><a href="gallery.php?display=recent">Recent</a></li>
+            <li class="filterChoice"><a href="gallery.php??display=featured">Featured</a></li>
         </ul>
 
 
