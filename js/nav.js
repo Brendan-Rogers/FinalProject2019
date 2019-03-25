@@ -4,8 +4,8 @@ let menuBut = document.querySelector('.menuButton'),
     closeBut = document.querySelector('.closeButton'),
     nav = document.querySelector('.navArea'),
     body = document.querySelector('body'),
-    cont = document.querySelector('.page');
-info = document.querySelector('.navInfo');
+    cont = document.querySelector('.page'),
+    info = document.querySelector('.navInfo');
 
 
 

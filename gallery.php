@@ -24,7 +24,7 @@
 </head>
 <body>
 
-    <nav class="navArea hidden">
+    <nav class="navArea op">
         <h1 class="hidden">Main Navigation</h1>
 
         <a href="#" class="closeButton">Close</a>
@@ -42,6 +42,8 @@
             <li class="infoList">(555)-555-5555</li>
             <li class="infoList">Awareness@ODP.ca</li>
         </ul>
+
+        <a href="admin/admin_login.php" class="adminLink"><img class="adminLock" src="images/lock-icon.svg" alt="admin link"></a>
     </nav>
 
     <a href="#" class="menuButton">Menu</a>

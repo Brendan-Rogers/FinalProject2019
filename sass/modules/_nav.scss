@@ -3,11 +3,12 @@
     background-color: #ff0000;
     width: 40%;
     right: 0;
-    top:0;
+    top: 0;
     overflow-x:hidden;
     height: 100%;
     z-index: 4;
-   transition: all 250ms linear;
+    transition: all 250ms linear;
+    display: block;
 }
 
 .navList{
@@ -45,7 +46,8 @@
 }
 
 .op{
-    opacity:0;
+    opacity: 0;
+    width: 0%;
     -webkit-filter: blur(3px); /* Safari 6.0 - 9.0 */
     filter: blur(3px);
 }
@@ -62,6 +64,7 @@
     right: 75px;
     font-weight: bold;
     z-index: 2;
+    transition: all .5s ease-in-out;
 }
 
 .menuButton:hover{
@@ -72,6 +75,10 @@
     color: #ffffff;
 }
 
+.menuHome:hover{
+    color: #cccccc;
+}
+
 .closeButton{
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
@@ -80,10 +87,24 @@
     top: 80px;
     right: 75px;
     font-weight: bold;
+    transition: all .5s ease-in-out;
 }
 
 .closeButton:hover{
     text-decoration: underline;
+}
+
+.adminLink{
+    display: block;
+    width: 28px;
+    margin-top: 72px;
+    margin-left: 30px;
+    opacity: .5;
+    transition: all .4s ease-in-out;
+}
+
+.adminLink:hover{
+    opacity: 1;
 }
 
 
