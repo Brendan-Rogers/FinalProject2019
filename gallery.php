@@ -31,9 +31,9 @@
 
         <ul class="navList">
             <li class="navOpt"><a href="index.html" class="navLink">home.</a></li>
-            <li class="navOpt"><a href="#" class="navLink">about.</a></li>
+            <li class="navOpt"><a href="index.html" class="navLink">about.</a></li>
             <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
-            <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
+            <li class="navOpt"><a href="events.html" class="navLink">events.</a></li>
         </ul>
 
         <ul class="navInfo">
@@ -67,7 +67,7 @@
                 <div class="orgPoster">
                     <img src="images/user_images/<?php echo $row['file_name']; ?>" alt="submission <?php echo $row['id']; ?>" class="orgPosterImg">
                     <h3 class="pArtist">Artist: <?php echo $row['f_name'].' '.$row['l_name']; ?></h3>
-                    <h4>Submitted on <?php $date = gmdate("Y/m/d", strtotime($row['upload_time'])); echo $date; ?></h4>
+                    <h4 class="pDate">Submitted on <?php $date = gmdate("Y/m/d", strtotime($row['upload_time'])); echo $date; ?></h4>
                 </div>
 
             <?php endwhile; ?>
