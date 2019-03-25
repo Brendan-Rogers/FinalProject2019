@@ -51,6 +51,11 @@ function image_status($id, $file, $status) {
 		$approve_image_query = "UPDATE tbl_images SET img_status = {$status}, mod_approve = 0, mod_decline = 0 WHERE id = {$id}";
 		$approve_image_set = $pdo->query($approve_image_query);
 		return 'Moved Out of Rotation.';
+	} else if ($status == 4) {
+		// feature the item, thats it
+		$approve_image_query = "UPDATE tbl_images SET featured = 1 WHERE id = {$id}";
+		$approve_image_set = $pdo->query($approve_image_query);
+		return 'Image has been featured';
 	}
 
 	// SELECT mod_approve string WHERE id = id
