@@ -29,8 +29,8 @@
       if($file_size > 2097152){
          $errors[]='File size must be less then 2 MB';
       }
-      if ($width != 800 || $height != 1035) {
-         $errors[] = 'File must be exactly 800px wide by 1035px tall';
+      if ($width != 800 || $height != 1114) {
+         $errors[] = 'File must be exactly 800px wide by 1114px tall';
       }
       
       if(empty($errors)==true){
