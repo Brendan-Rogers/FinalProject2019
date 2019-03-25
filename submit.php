@@ -16,6 +16,7 @@
 
       $f_name = $_POST['f_name'];
       $l_name = $_POST['l_name'];
+      $terms = $_POST['terms'];
       $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
       
       $extensions= array("jpeg","jpg","png");
@@ -31,6 +32,8 @@
       }
       if ($width != 800 || $height != 1114) {
          $errors[] = 'File must be exactly 800px wide by 1114px tall';
+      } if (!$terms) {
+         $errors[] = 'The checkbox was not checked';
       }
       
       if(empty($errors)==true){
@@ -95,6 +98,10 @@
 
          <!--<label>Email Address:</label>-->
          <input type="email" name="email" placeholder="Email Address">
+
+         <br><br>
+         
+         <input type="checkbox" name="terms" required> <label>I agree with the </label> <a href="assets/terms/terms-and-conditions.pdf">Terms and Conditions</a>
 
          <br><br>
        
