@@ -24,17 +24,15 @@
 </head>
 <body>
 
-  <!--<nav>Menu</nav>-->
-  <nav class="navArea op">
+    <nav class="navArea hidden">
         <h1 class="hidden">Main Navigation</h1>
 
         <a href="#" class="closeButton">Close</a>
 
         <ul class="navList">
-            <li data-menuanchor="page1" class="navOpt"><a href="#" class="navLink">home.</a></li>
+            <li class="navOpt"><a href="index.html" class="navLink">home.</a></li>
             <li class="navOpt"><a href="#" class="navLink">about.</a></li>
-            <li class="navOpt"><a href="gallery.php" class="navLink">gallery.</a></li>
-            <li class="navOpt"><a href="events.html" class="navLink">events.</a></li>
+            <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
             <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
         </ul>
 
@@ -46,7 +44,7 @@
         </ul>
     </nav>
 
-    <a href="#" class="menuButton ">Menu</a>
+    <a href="#" class="menuButton">Menu</a>
 
     <main class="container page">
         <h1 class="siteTitle">ODP</h1>
@@ -56,7 +54,7 @@
         <ul class="imgFilter">
             <li class="filterChoice"><a href="gallery.php?display=all">All</a></li>
             <li class="filterChoice"><a href="gallery.php?display=recent">Recent</a></li>
-            <li class="filterChoice"><a href="gallery.php??display=featured">Featured</a></li>
+            <li class="filterChoice"><a href="gallery.php?display=featured">Featured</a></li>
         </ul>
 
 
@@ -89,14 +87,14 @@
     </main>
 
     <section class="lightbox">
-		<h2 class="hidden">light box</h2>
-		<span class="closeLightbox">x</span>
+        <h2 class="hidden">light box</h2>
+        <span class="closeLightbox">x</span>
 
-		<div class="imgCon">
-			<img src="images/user_images/drew_1553281065.png" alt="user poster" class="lbImg">
-		</div>
+        <div class="imgCon">
+            <img src="images/user_images/drew_1553281065.png" alt="user poster" class="lbImg">
+        </div>
 
-	</section>
+    </section>
 
     <script src="js/nav.js"></script>
     <script src="js/lightbox.js"></script>

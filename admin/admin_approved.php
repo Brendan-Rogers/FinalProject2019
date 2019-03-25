@@ -33,6 +33,12 @@
 		<form action="admin_approved.php" method="post">
 			<input type="submit" name="no_<?php echo $row['id']; ?>" value="Move to Archive">
 			<br><br>
+			<?php if (!$row['featured']): ?>
+
+			<input type="submit" name="featured_<?php echo $row['id']; ?>" value="Feature this Poster">
+			<br><br>
+
+			<?php endif; ?>
 		</form>
 	</div>
 
@@ -41,10 +47,13 @@
 		$file = $row['file_name'];
 
 		$no_post = 'no_'.$id;
+		$feature_post = 'featured_'.$id;
 
 		// they've clicked decline
 		if (isset($_POST[$no_post])) {
 			echo image_status($id, $file, '3');
+		} else if (isset($_POST[$feature_post])) {
+			echo image_status($id, $file, '4');
 		}
 
 		endwhile;	
