@@ -24,15 +24,17 @@
 </head>
 <body>
 
-    <nav class="navArea hidden">
+  <!--<nav>Menu</nav>-->
+  <nav class="navArea op">
         <h1 class="hidden">Main Navigation</h1>
 
         <a href="#" class="closeButton">Close</a>
 
         <ul class="navList">
-            <li class="navOpt"><a href="index.html" class="navLink">home.</a></li>
+            <li data-menuanchor="page1" class="navOpt"><a href="#" class="navLink">home.</a></li>
             <li class="navOpt"><a href="#" class="navLink">about.</a></li>
-            <li class="navOpt"><a href="#" class="navLink">gallery.</a></li>
+            <li class="navOpt"><a href="gallery.php" class="navLink">gallery.</a></li>
+            <li class="navOpt"><a href="events.html" class="navLink">events.</a></li>
             <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
         </ul>
 
@@ -44,7 +46,7 @@
         </ul>
     </nav>
 
-    <a href="#" class="menuButton">Menu</a>
+    <a href="#" class="menuButton ">Menu</a>
 
     <main class="container page">
         <h1 class="siteTitle">ODP</h1>

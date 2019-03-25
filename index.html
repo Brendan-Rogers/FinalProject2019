@@ -26,6 +26,7 @@
             <li data-menuanchor="page1" class="navOpt"><a href="#" class="navLink">home.</a></li>
             <li class="navOpt"><a href="#" class="navLink">about.</a></li>
             <li class="navOpt"><a href="gallery.php" class="navLink">gallery.</a></li>
+            <li class="navOpt"><a href="events.html" class="navLink">events.</a></li>
             <li class="navOpt"><a href="#" class="navLink">contact.</a></li>
         </ul>
 
@@ -37,12 +38,17 @@
         </ul>
     </nav>
 
-    <a href="#" class="menuButton menuHome">Menu</a>
+    
 
+    <a href="#" class="menuButton menuHome">Menu</a>
+    <div class="submit_button">
+        <a href="submit.php"><img src="images/submit_button.svg" alt="submit button"></a> 
+     </div>
     <div id="app" class="page">
 
         <full-page :options="options" id="fullpage" ref="fullpage">
             <!--landing page -->
+
             <div id="landing" class="section colorPage">
                 <h1 class="titleSmall">ODP</h1>
                 <h1 class="titleText rev">Organ Donation Project</h1>
