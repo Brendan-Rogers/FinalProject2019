@@ -23,14 +23,13 @@
     
     let posters = [];
     orgPosterImg.forEach(function(poster) {
-        // poster.addEventListener('click', showLightbox(poster));
         posters.push(poster);
     });
 
     for (var i = 0; i < posters.length; i++) {
         (function(index) {
              posters[index].addEventListener("click", function() {
-                console.log(posters[index]);
+                // console.log(posters[index]);
                 lightbox.classList.add('showLightbox');
                 body.classList.add('scrollStop');
                 lbImg.src = posters[index].src;

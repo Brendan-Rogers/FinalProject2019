@@ -28,6 +28,8 @@
 <body class="adminBody">
 	<?php if(!empty($message)){ echo $message;} ?>
 
+	<a href="../index.html" class="siteLink"><h2 class="siteTitle">ODP</h2></a>
+
 	<div class="adminLog">
 	
 		<h2 class="adminTitle">ENTER YOUR LOGIN INFORMATION BELOW:</h2>
