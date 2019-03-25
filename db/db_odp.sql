@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:8889
--- Generation Time: Mar 17, 2019 at 10:27 AM
+-- Generation Time: Mar 25, 2019 at 02:58 PM
 -- Server version: 5.7.25
 -- PHP Version: 7.3.1
 
@@ -28,39 +28,32 @@ CREATE TABLE `tbl_images` (
   `file_name` varchar(50) NOT NULL,
   `upload_time` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
   `img_status` tinyint(3) DEFAULT '0',
-  `mod_approve` varchar(50) DEFAULT '0',
-  `mod_decline` varchar(50) DEFAULT '0'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `tbl_users`
---
-
-CREATE TABLE `tbl_users` (
-  `user_id` mediumint(10) UNSIGNED NOT NULL,
-  `user_fname` varchar(250) NOT NULL,
-  `user_name` varchar(250) NOT NULL,
-  `user_pass` varchar(250) NOT NULL,
-  `user_email` varchar(250) NOT NULL,
-  `user_ip` varchar(50) DEFAULT NULL,
-  `user_date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `user_lastlogin` varchar(30) DEFAULT NULL,
-  `user_failed` int(5) DEFAULT NULL,
-  `user_suspended` tinyint(1) DEFAULT NULL,
-  `user_new` tinyint(1) NOT NULL DEFAULT '1',
-  `user_mod` int(5) NOT NULL DEFAULT '0'
+  `featured` tinyint(1) NOT NULL DEFAULT '0',
+  `mod_approve` varchar(50) DEFAULT NULL,
+  `mod_decline` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Dumping data for table `tbl_users`
+-- Dumping data for table `tbl_images`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `user_fname`, `user_name`, `user_pass`, `user_email`, `user_ip`, `user_date`, `user_lastlogin`, `user_failed`, `user_suspended`, `user_new`, `user_mod`) VALUES
-(6, 'brenda1', 'swag1', '$2y$10$Yn5/y9PjRTrnoGhCiUimv.zuFw9jMn.c5hhpb6puQHF.Qg6SNqEpS', 'new@email.com', '127.0.0.1', '2019-02-07 20:29:23', '2019/03/17', 0, 0, 0, 1),
-(7, 'Christine', 'lopez', '$2y$10$Tf3mc8nzvLSWFDy8y9tUsODu6SLdFf2uE7SwyGTJC4iXMuTowxmKa', 'dog@net.com', '127.0.0.1', '2019-03-04 15:46:14', '2019/03/17', NULL, NULL, 0, 0),
-(9, 'aiden', 'popcorn', '$2y$10$eq3aeRY0CyioeMzD/spLXOdinh30fTVLCogPisamN9ncaOQQMwQeG', 'dog@net.com', '127.0.0.1', '2019-03-04 23:00:53', '2019/03/17', NULL, NULL, 0, 0);
+INSERT INTO `tbl_images` (`id`, `f_name`, `l_name`, `email`, `file_name`, `upload_time`, `img_status`, `featured`, `mod_approve`, `mod_decline`) VALUES
+(21, 'Aiden', 'Riekenbrauck', 'rv.rogers@hotmail.com', 'aiden_1553523824.png', '2019-03-25 14:23:44.206642', 1, 0, NULL, NULL),
+(22, 'Brendan', 'Rogers', 'brendanrogers781@gmail.com', 'brendan_1553523976.png', '2019-03-25 14:26:16.230607', 1, 1, NULL, NULL),
+(23, 'Christine', 'Lopez', 'christine@lopez.ca', 'christine_1553523993.png', '2019-03-25 14:26:33.861571', 1, 0, NULL, NULL),
+(24, 'Ethan', 'Dodd', 'edot@gmail.com', 'ethan_1553524027.png', '2019-03-25 14:27:07.918303', 1, 0, NULL, NULL),
+(25, 'Drew', 'Shewaga', 'drew@shewaga.com', 'drew_1553524460.png', '2019-03-25 14:34:20.155426', 1, 0, NULL, NULL),
+(26, 'Rob', 'Rogers', 'rv.rogers@hotmail.com', 'rob_1553524561.png', '2019-03-25 14:36:01.677951', 1, 1, NULL, NULL),
+(27, 'Vicki', 'Lynn', 'death@grips.online', 'vicki_1553524583.png', '2019-03-25 14:36:23.465133', 1, 0, NULL, NULL),
+(28, 'Jarrod', 'Osterbeck', 'dog@net.com', 'jarrod_1553524634.png', '2019-03-25 14:37:14.190789', 1, 0, NULL, NULL),
+(29, 'Logan', 'Wolfe', 'logan@wolfe.com', 'logan_1553524702.png', '2019-03-25 14:38:22.535116', 1, 0, NULL, NULL),
+(30, 'Robert', 'Colqhoun', 'AIDEN@gmail.com', 'robert_1553524716.png', '2019-03-25 14:38:36.974983', 1, 0, NULL, NULL),
+(31, 'Brad', 'Anstey', 'brad@anstey.com', 'brad_1553524731.png', '2019-03-25 14:38:51.248544', 1, 0, NULL, NULL),
+(32, 'Hannah', 'Bos', 'hannah@bos.com', 'hannah_1553524749.png', '2019-03-25 14:39:09.345500', 1, 1, NULL, NULL),
+(33, 'Dog', 'Petterson', 'dog@net.com', 'dog_1553524769.png', '2019-03-25 14:39:29.306927', 1, 0, NULL, NULL),
+(34, 'Sasha', 'Balazic', 'sasha@groovetown.ca', 'sasha_1553524851.png', '2019-03-25 14:40:51.864624', 1, 0, NULL, NULL),
+(35, 'Lori', 'Ogilvie', 'lori@ogilvie.ca', 'lori_1553524935.png', '2019-03-25 14:42:15.345596', 1, 0, NULL, NULL),
+(36, 'Franny', 'Chestnut', 'brendanr11@gmail.com', 'franny_1553525097.png', '2019-03-25 14:44:57.631330', 1, 1, NULL, NULL);
 
 --
 -- Indexes for dumped tables
@@ -73,12 +66,6 @@ ALTER TABLE `tbl_images`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  ADD PRIMARY KEY (`user_id`);
-
---
 -- AUTO_INCREMENT for dumped tables
 --
 
@@ -86,10 +73,4 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_images`
 --
 ALTER TABLE `tbl_images`
-  MODIFY `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
-
---
--- AUTO_INCREMENT for table `tbl_users`
---
-ALTER TABLE `tbl_users`
-  MODIFY `user_id` mediumint(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(100) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
