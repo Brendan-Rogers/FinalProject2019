@@ -21,10 +21,10 @@
     //background:rgb(255, 148, 60);
     background:rgb(191, 38, 238);
     background-blend-mode:multiply;
-    background-image:url(../images/events_splash.png)!important;
+    background-image:url(../images/events_splash.png) !important;
     background-position:center !important;
     background-size: cover;
-   overflow:hidden;
+    overflow:hidden;
     color: #fff;
     position:relative;
     animation-fill-mode: forwards;
@@ -217,6 +217,10 @@ color: #fff;
 font-size: .8em;
 line-height: 1.4em;
 margin: 5%;
+}
+
+.eventText span {
+    text-decoration: underline;
 }
 
 .eventText1{
