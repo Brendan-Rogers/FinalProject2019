@@ -190,6 +190,34 @@ h1, h2 {
         display:block;
     }
 
+   .fas{
+       opacity:0.5;
+       margin-left:0.5em;
+    
+    }
+
+    .floating {  
+        opacity:0.5;
+        margin-left:0.5em;
+        animation-name: floating;
+        animation-duration: 1.5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+      
+    }
+    
+    @keyframes floating {
+        from { transform: translate(0,  0px); }
+        100%  { transform: translate(15px, 0px); }
+    }
+
+    .action:hover{
+        .floating{
+            opacity:1;
+        }
+    }
+
     //parallax
     #aboutPoster{
         position: relative;
