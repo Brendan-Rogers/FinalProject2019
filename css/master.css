@@ -604,8 +604,56 @@ input[type=file] {
 .eventTop {
   height: 100vh;
   width: 100%;
-  background-color: black;
+  background: #bf26ee;
+  background-blend-mode: multiply;
+  background-image: url(../images/events_splash.png) !important;
+  background-position: center !important;
+  background-size: cover;
+  overflow: hidden;
   color: #fff;
+  position: relative;
+  animation-fill-mode: forwards;
+  animation: colorChange 30s infinite;
+  -webkit-animation: colorChange 30s infinite;
+}
+
+@keyframes colorChange {
+  0% {
+    background: #f5a9a9;
+  }
+  25% {
+    background: #00afcf;
+  }
+  50% {
+    background: #0080ff;
+  }
+  75% {
+    background: #8a162f;
+  }
+  100% {
+    background: #bf26ee;
+  }
+}
+@-webkit-keyframes colorChange {
+  0% {
+    background: #f5a9a9;
+  }
+  25% {
+    background: #00afcf;
+  }
+  50% {
+    background: #0080ff;
+  }
+  75% {
+    background: #8a162f;
+  }
+  100% {
+    background: #bf26ee;
+  }
+}
+.eventPaint {
+  top: 100px;
+  mix-blend-mode: lighten;
 }
 
 .eventTitle {
