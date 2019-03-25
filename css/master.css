@@ -25,7 +25,12 @@ h1, h2 {
   width: 100px;
   height: auto;
   top: 90vh;
-  right: 75px; }
+  right: 75px;
+  transition: all .5s ease-in-out; }
+
+.submit_button img:hover {
+  width: 125px;
+  top: 89vh; }
 
 .section {
   padding: 1em;
@@ -85,7 +90,7 @@ h1, h2 {
   margin-bottom: 1em;
   left: 15px;
   width: 10px;
-  font-weight: 500;
+  font-weight: 510;
   z-index: 7000; }
 
 .desc {
@@ -233,13 +238,17 @@ footer {
   top: 80px;
   right: 75px;
   font-weight: bold;
-  z-index: 2; }
+  z-index: 2;
+  transition: all .5s ease-in-out; }
 
 .menuButton:hover {
   text-decoration: underline; }
 
 .menuHome {
   color: #ffffff; }
+
+.menuHome:hover {
+  color: #cccccc; }
 
 .closeButton {
   font-family: Arial, Helvetica, sans-serif;
@@ -248,7 +257,8 @@ footer {
   position: absolute;
   top: 80px;
   right: 75px;
-  font-weight: bold; }
+  font-weight: bold;
+  transition: all .5s ease-in-out; }
 
 .closeButton:hover {
   text-decoration: underline; }
