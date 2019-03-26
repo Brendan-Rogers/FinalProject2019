@@ -1,26 +1,21 @@
 <?php
    require_once('admin/scripts/config.php');
-
    if(isset($_FILES['image'])){
-
       $errors= array();
       $file_name = $_FILES['image']['name'];
       $file_size =$_FILES['image']['size'];
       $file_tmp = $_FILES['image']['tmp_name'];
       $file_type = $_FILES['image']['type'];
       $file_ext = strtolower(end(explode('.',$_FILES['image']['name'])));
-
       $fileinfo = getimagesize($_FILES["image"]["tmp_name"]);
       $width = $fileinfo[0];
       $height = $fileinfo[1];
-
       $f_name = $_POST['f_name'];
       $l_name = $_POST['l_name'];
       $terms = $_POST['terms'];
       $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
       
       $extensions= array("jpeg","jpg","png");
-
       if (!$email) {
          $errors[] = 'That is not an email address. Nice try!';
       }
@@ -38,11 +33,8 @@
       
       if(empty($errors)==true){
          $new_file_name = strtolower($f_name).'_'.time().'.'.$file_ext;
-
          move_uploaded_file($file_tmp,'images/user_images/'.$new_file_name);
          echo image_submit($f_name, $l_name, $email, $new_file_name).$width.$height;
-
-
       }else{
          print_r($errors);
       }
@@ -81,9 +73,7 @@
 
 
       <div id="formArea">
-      <div id="imagePrev">
-         <video src="videos/guide.mp4" autoplay muted controls></video>
-      </div>
+      <div id="imagePrev" style="background-image: url(./images/lung.png);"></div>
       <div id="formContainer">
     
       <form  class="form" action="" method="POST" enctype="multipart/form-data">
@@ -118,8 +108,9 @@
 
          <input class="formBtn" type="submit"/>
 
- 
+         <a class="submitLink" target="_blank" href="https://vimeo.com/user92601393/review/326460105/429d86a18a">View the submition instructions</a>
       </form>
+     
       </div>
 </div>
 
@@ -127,9 +118,4 @@
 
 </body>
 </html>
-
-
-
-
-
 
