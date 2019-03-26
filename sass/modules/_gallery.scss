@@ -61,6 +61,12 @@
     width: 100%;
     height: auto;
     border: .8px solid #000;
+    transition: all .3s ease-in-out;
+    cursor: pointer;
+}
+
+.orgPoster img:hover{
+    transform: scale(1.1);
 }
 
 .pArtist{
